@@ -28,3 +28,13 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: User asks for class information politely
+  steps:
+  - intent: get_all_classes
+  - action: action_get_all_classes
+
+- story: User requests course sections
+  steps:
+  - intent: specify_class
+  - action: action_get_course_sections

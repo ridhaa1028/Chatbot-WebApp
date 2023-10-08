@@ -1,33 +1,47 @@
-# app.py
+# backend/app.py
+#from flask import Flask
+#from flask_restful import Api
+#from flask_sqlalchemy import SQLAlchemy
 
-from flask import Flask, request
-from flask_restful import Api, Resource, reqparse
-from flask_sqlalchemy import SQLAlchemy
-from scraping import scrape_website_data  # Import your scraping function
+#app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courses.db'
+#db = SQLAlchemy(app)
+#api = Api(app)
+
+# Import and add the resources
+#from api.all_data import AllDataResource
+#from api.data_by_column import DataByColumnResource
+
+#api.add_resource(AllDataResource, '/api/all_data')
+#api.add_resource(DataByColumnResource, '/api/data_by_column')
+
+#if __name__ == '__main__':
+#    app.run(debug=True)
+
+from flask import Flask
+from flask_restful import Api
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, session
+from .models import Base  # Import Base from your models.py
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
-db = SQLAlchemy(app)
+
+# Create an SQLAlchemy engine
+engine = create_engine('sqlite:///courses.db')
+
+# Create an SQLAlchemy session
+Session = sessionmaker(bind=engine)
+
+# Import and add the resources
+from .all_data import AllDataResource  # Update with your actual import path
+from .data_by_column import DataByColumnResource  # Update with your actual import path
+
 api = Api(app)
-
-from model import MyTable
-
-# Add the resource to the API with a route
-api.add_resource(MyTableResource, '/api/items/<int:id>')
+api.add_resource(AllDataResource, '/all_data', resource_class_kwargs={'Session': Session})
+api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs={'Session': Session})
 
 if __name__ == '__main__':
-    # Run the web scraping logic on application startup
-    initial_scraping_success = scrape_website_data() #function returns boolean value
-
-    if initial_scraping_success:
-        print('Initial data scraping on startup succeeded')
-    else:
-        print('Initial data scraping on startup failed')
-
-    # Create the database and tables
-    db.create_all()
-    
-    # Start the Flask application
     app.run(debug=True)
+
 
 

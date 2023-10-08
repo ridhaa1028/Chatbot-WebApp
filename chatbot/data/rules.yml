@@ -11,3 +11,14 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: User requests course sections
+  steps:
+    - intent: specify_class
+    - action: action_get_course_sections
+
+- rule: User requests all classes
+  steps:
+    - intent: get_all_classes
+    - action: action_get_all_classes
+

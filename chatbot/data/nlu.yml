@@ -17,6 +17,13 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: get_all_classes
+  examples: |
+    - Show me all classes
+    - List all classes
+    - Get me the class information
+    - What classes are available?
+
 - intent: goodbye
   examples: |
     - cu
@@ -89,3 +96,33 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: specify_class
+  examples: |
+    - Tell me about the course [course_name]
+    - I want information on [course_name]
+    - What can you tell me about [course_name]
+    - Give me details about [course_name]
+    - Provide information on [course_name]
+    - Tell me everything about [course_name]
+    - What do you know about [course_name]
+    - Describe [course_name]
+    - Explain [course_name] to me
+    - [course_name] details, please
+    - Can you give me the scoop on [course_name]
+    - I'd like to learn about [course_name]
+    - [course_name] - What's the deal?
+    - Share some insights on [course_name]
+    - What's the story with [course_name]
+    - I'm interested in [course_name]
+    - Tell me more about [course_name]
+    - I need info on [course_name]
+    - Tell me about the following course [ORGANIZATIONAL BEHAVIOR](course_name)
+    - I want information on [STATISTICS I](course_name)
+
+- regex: course_name
+  examples: |
+    - ORGANIZATIONAL BEHAVIOR
+    - STATISTICS I
+    - Some Other Course Name
+

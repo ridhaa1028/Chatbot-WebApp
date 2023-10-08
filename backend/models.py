@@ -1,12 +1,23 @@
-from flask_sqlalchemy import SQLAlchemy
-from datetime import time  # Import the time class
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-db = SQLAlchemy()
+Base = declarative_base()
 
-class MyTable(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255))
-    instructor = db.Column(db.String(255))
-    days = db.Column(db.String(255))
-    time = db.Column(db.Time)  # Use db.Time for time values
+class Course(Base):
+    __tablename__ = 'courses'
+
+    crn = Column(Integer, primary_key=True)
+    subj = Column(String(255))
+    crse = Column(String(255))
+    sect = Column(String(255))
+    title = Column(String(255))
+    prof = Column(String(255))
+    day_beg_end_bldgroom_type = Column(String(255))
+    hrs = Column(Integer)
+    avail = Column(Integer)
+
+    def __repr__(self):
+        return f'<Course {self.crn}>'
+
+
 
