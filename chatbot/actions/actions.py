@@ -65,10 +65,58 @@ class GetAllClassesAction(Action):
 import requests
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
+from rasa_sdk.executor import CollectingDispatcher
 
 class GetCourseSectionsAction(Action):
     def name(self):
         return "action_get_course_sections"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        # Extract the course name from the slot or entity
+        course_name = tracker.get_slot("course_name")
+
+        if course_name:
+            # Make a GET request to your API to filter by 'title'
+            api_url = "http://localhost:5000/data_by_column"  # Update with your API URL
+            params = {'column_name': ['title'], 'column_value': [course_name]}
+
+             # Send an empty JSON object in the request body
+            data = {}
+
+            # Set the headers to specify that you're sending JSON
+            headers = {"Content-Type": "application/json"}
+
+            response = requests.get(api_url, params=params, json=data, headers=headers)
+
+            if response.status_code == 200:
+                data = response.json()
+
+                if data:
+                    # Format the response to display course sections
+                    formatted_sections = []
+
+                    for item in data:
+                        section_info = "\n".join([f"{key}: {value}" for key, value in item.items()])
+                        formatted_sections.append(section_info)
+
+                    message = f"Here are all the sections for '{course_name}':\n\n"
+                    message += "\n".join(formatted_sections)
+                    dispatcher.utter_message(message)
+                else:
+                    dispatcher.utter_message(f"Sorry, no sections found for '{course_name}'.")
+            else:
+                dispatcher.utter_message("Sorry, I couldn't retrieve the course sections at the moment.")
+        else:
+            dispatcher.utter_message("I couldn't find a course name in your message.")
+
+        return [SlotSet("course_name", course_name)]
+
+
+
+
+class GetCourseSubjectAction(Action):
+    def name(self):
+        return "action_get_course_subjects"
 
     def run(self, dispatcher, tracker, domain):
         # Extract the course name from the user's message
@@ -76,7 +124,7 @@ class GetCourseSectionsAction(Action):
 
         # Make a GET request to your API to filter by 'crse'
         api_url = "http://localhost:5000/data_by_column"  # Update with your API URL
-        params = {'column_name': 'title', 'column_value': course_name}
+        params = {'column_name': 'subj', 'column_value': course_name}
 
         # Send an empty JSON object in the request body
         data = {}
@@ -100,7 +148,7 @@ class GetCourseSectionsAction(Action):
                 message += "\n\n".join(formatted_sections)
                 dispatcher.utter_message(message)
             else:
-                dispatcher.utter_message(f"Sorry, no sections found for '{course_name}'.")
+                dispatcher.utter_message(f"Sorry, no classes found for '{course_name}'.")
         else:
             dispatcher.utter_message("Sorry, I couldn't retrieve the course sections at the moment.")
 

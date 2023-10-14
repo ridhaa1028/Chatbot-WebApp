@@ -1,11 +1,10 @@
 from flask_restful import Api, Resource, reqparse
 from flask import jsonify
-#from app import Base  # Import the Base from app.py
 from .models import Course  # Import the Course model from models.py
 
 parser = reqparse.RequestParser()
-parser.add_argument('column_name', type=str)
-parser.add_argument('column_value', type=str)
+parser.add_argument('column_name', type=str, action='append')
+parser.add_argument('column_value', type=str, action='append')
 
 class DataByColumnResource(Resource):
     def __init__(self, Session):
@@ -13,32 +12,40 @@ class DataByColumnResource(Resource):
 
     def get(self):
         args = parser.parse_args()
-        column_name = args['column_name']
-        column_value = args['column_value']
+        column_names = args['column_name']
+        column_values = args['column_value']
+
+        if not column_names or not column_values:
+            return jsonify({"error": "You must provide at least one column_name and one column_value."}), 400
 
         # Define the list of valid column names to prevent SQL injection
         valid_columns = ['crn', 'subj', 'crse', 'sect', 'title', 'prof', 'day_beg_end_bldgroom_type', 'hrs', 'avail']
 
-        # Check if the provided column name is valid
-        if column_name in valid_columns:
-            # Create a new session for this request
-            session = self.Session()
+        # Validate the provided column names
+        invalid_columns = [col for col in column_names if col not in valid_columns]
 
-            try:
-                # Build the query dynamically using getattr
-                query = getattr(Course, column_name) == column_value
-                data = session.query(Course).filter(query).all()
+        if invalid_columns:
+            return jsonify({"error": f"Invalid column names: {', '.join(invalid_columns)}"}), 400
 
-                if data:
-                    # Format the response to include all columns for each matching course
-                    data_list = [{column: getattr(item, column) for column in valid_columns} for item in data]
-                    return jsonify(data_list)
-                else:
-                    return jsonify([])  # Return an empty list if no matching records found
-            finally:
-                session.close()  # Close the session to release resources
-        else:
-            return jsonify({"error": "Invalid column name"}), 400  # Return an error for an invalid column name
+        # Create a new session for this request
+        session = self.Session()
+
+        try:
+            # Build the query dynamically using getattr
+            filters = [getattr(Course, col) == val for col, val in zip(column_names, column_values)]
+            data = session.query(Course).filter(*filters).all()
+
+            if data:
+                # Format the response to include all columns for each matching course
+                data_list = [{column: getattr(item, column) for column in valid_columns} for item in data]
+                return jsonify(data_list)
+            else:
+                return jsonify([])  # Return an empty list if no matching records found
+        finally:
+            session.close()  # Close the session to release resources
+
+
+
 
 
 

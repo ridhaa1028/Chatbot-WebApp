@@ -15,6 +15,7 @@ entities:
 actions:
   - action_get_course_sections
   - action_get_all_classes
+  - action_get_course_subjects
 responses:
   utter_greet:
     - text: Hey! How are you?

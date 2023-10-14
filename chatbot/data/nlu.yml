@@ -99,30 +99,27 @@ nlu:
 
 - intent: specify_class
   examples: |
-    - Tell me about the course [course_name]
-    - I want information on [course_name]
-    - What can you tell me about [course_name]
-    - Give me details about [course_name]
-    - Provide information on [course_name]
-    - Tell me everything about [course_name]
-    - What do you know about [course_name]
-    - Describe [course_name]
-    - Explain [course_name] to me
-    - [course_name] details, please
-    - Can you give me the scoop on [course_name]
-    - I'd like to learn about [course_name]
-    - [course_name] - What's the deal?
-    - Share some insights on [course_name]
-    - What's the story with [course_name]
-    - I'm interested in [course_name]
-    - Tell me more about [course_name]
-    - I need info on [course_name]
-    - Tell me about the following course [ORGANIZATIONAL BEHAVIOR](course_name)
-    - I want information on [STATISTICS I](course_name)
+    - Tell me about the course [Discrete Structures](course_name)
+    - I want information on [Principles of Finance](course_name)
+    - What can you tell me about [Calculus II](course_name)
+    - Give me details about [Foundations of Computer Science](course_name)
+    - Provide information on [Linear Algebra](course_name)
+    - Tell me everything about [Marketing 101](course_name)
+    - What do you know about [Principles of Finance](course_name)
+    - Describe [ORGANIZATIONAL BEHAVIOR](course_name)
+    - Explain [Statistics II](course_name) to me
+    - [Database Systems](course_name) details, please
+    - Can you give me the scoop on [Software Engineering I](course_name)
+    - I'd like to learn about [Accounting I](course_name)
+    - Share some insights on [ORGANIZATIONAL BEHAVIOR](course_name)
+    - What's the story with [Principles of Marketing](course_name)
+    - I'm interested in [Chemistry I](course_name)
+    - Tell me more about [Organic Chemistry](course_name)
+    - I need info on [Intro to Evolution](course_name)
+    - ORGANIZATIONAL BEHAVIOR
 
 - regex: course_name
   examples: |
-    - ORGANIZATIONAL BEHAVIOR
-    - STATISTICS I
-    - Some Other Course Name
+    - [A-Z][A-Z0-9\s]*
+
 
