@@ -1,0 +1,5 @@
+Had to put RegexEntityExtractor after DIETClassifier
+
+This way the RegexEntityExtractor has the last say and then the professor regex is picked up correctly
+
+Not 100% sure but I think currently DIETClassifier is used with the lookup tables for title entity

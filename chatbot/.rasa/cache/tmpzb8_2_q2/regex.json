@@ -1,0 +1,10 @@
+[
+  {
+    "name": "professor",
+    "pattern": "[A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*"
+  },
+  {
+    "name": "title",
+    "pattern": "(\\bCYBER\\ SEC:\\ FUND,\\ PRIN\\ AND\\ APPS\\b|\\bObject\\ Oriented\\ Programming\\ And\\ Data\\ Abstraction\\b|\\bETHICS,\\ LEADERSHIP,\\ \\&\\ ADVOC\\b|\\bAdvanced\\ Learning\\ Assistant\\ Seminar\\ in\\ Computer\\ Science\\b|\\bSoftware\\ Engineering\\ I\\b|\\bSoftware\\ Engineering\\ II\\b|\\bAn\\ Introduction\\ To\\ Economics\\-A\\ Macroeconomic\\ Perspective\\b|\\bAdvanced\\ Database\\ Systems:\\ Theory\\ And\\ Programming\\b|\\bIntroduction\\ to\\ Ethics\\ \\-\\ WI\\b)"
+  }
+]

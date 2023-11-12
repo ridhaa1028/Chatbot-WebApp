@@ -1,6 +1,6 @@
 from flask_restful import Api, Resource, reqparse
 from flask import jsonify
-from .models import Course  # Import the Course model from models.py
+from .models import SectionTally, Catalog  # Import the SectionTally, Catalog model from models.py
 
 parser = reqparse.RequestParser()
 parser.add_argument('column_name', type=str, action='append')
@@ -32,8 +32,8 @@ class DataByColumnResource(Resource):
 
         try:
             # Build the query dynamically using getattr
-            filters = [getattr(Course, col) == val for col, val in zip(column_names, column_values)]
-            data = session.query(Course).filter(*filters).all()
+            filters = [getattr(SectionTally, col) == val for col, val in zip(column_names, column_values)]
+            data = session.query(SectionTally).filter(*filters).all()
 
             if data:
                 # Format the response to include all columns for each matching course

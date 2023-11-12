@@ -73,7 +73,7 @@ class GetCourseSectionsAction(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         # Extract the course name from the slot or entity
-        course_name = tracker.get_slot("course_name")
+        course_name = tracker.get_slot("title")
 
         if course_name:
             # Make a GET request to your API to filter by 'title'
@@ -112,7 +112,7 @@ class GetCourseSectionsAction(Action):
         else:
             dispatcher.utter_message("I couldn't find a course name in your message.")
 
-        return [SlotSet("course_name", None)]
+        return [SlotSet("title", None)]
 
 
 

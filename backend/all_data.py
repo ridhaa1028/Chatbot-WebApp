@@ -2,14 +2,14 @@ from flask_restful import Api, Resource
 from flask import jsonify
 from sqlalchemy.orm import Session
 #from app import Base  # Import the Base from app.py
-from .models import Course  # Import the Course model from models.py
+from .models import SectionTally  # Import the Course model from models.py
 
 class AllDataResource(Resource):
     def __init__(self, session: Session):
         self.session = session
 
     def get(self):
-        data = self.session.query(Course).all()
+        data = self.session.query(SectionTally).all()
         data_list = [
             {
                 'crn': item.crn,

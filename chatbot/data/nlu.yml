@@ -99,28 +99,44 @@ nlu:
 
 - intent: specify_class
   examples: |
-    - Tell me about the course [Discrete Structures](course_name)
-    - I want information on [Principles of Finance](course_name)
-    - What can you tell me about [Calculus II](course_name)
-    - Give me details about [Foundations of Computer Science](course_name)
-    - Provide information on [Linear Algebra](course_name)
-    - Tell me everything about [Marketing 101](course_name)
-    - What do you know about [Principles of Finance](course_name)
-    - Describe [ORGANIZATIONAL BEHAVIOR](course_name)
-    - Explain [Statistics II](course_name) to me
-    - [Database Systems](course_name) details, please
-    - Can you give me the scoop on [Software Engineering I](course_name)
-    - I'd like to learn about [Accounting I](course_name)
-    - Share some insights on [ORGANIZATIONAL BEHAVIOR](course_name)
-    - What's the story with [Principles of Marketing](course_name)
-    - I'm interested in [Chemistry I](course_name)
-    - Tell me more about [Organic Chemistry](course_name)
-    - I need info on [Intro to Evolution](course_name)
-    - ORGANIZATIONAL BEHAVIOR
+    - Tell me about the course [Discrete Structures](title)
+    - I want information on [Principles of Finance](title)
+    - What can you tell me about [Calculus II](title)
+    - Give me details about [Foundations of Computer Science](title)
+    - Provide information on [Linear Algebra](title)
+    - Tell me everything about [Marketing 101](title)
+    - What do you know about [Principles of Finance](title)
+    - Describe [ORGANIZATIONAL BEHAVIOR](title)
+    - Explain [Statistics II](title) to me
+    - [Database Systems](title) details, please
+    - Can you give me the scoop on [Software Engineering I](title)
+    - I'd like to learn about [Accounting I](title)
+    - Share some insights on [ORGANIZATIONAL BEHAVIOR](title)
+    - What's the story with [Principles of Marketing](title)
+    - I'm interested in [Chemistry I](title)
+    - Tell me more about [Organic Chemistry](title)
+    - I need info on [Intro to Evolution](title)
+    - Tell me about the course [Principles of Nanoparticle Design and Engineering](title)
+    - What can you tell me about [Integrated Marketing Communication and New Media](title)
+    - I want information on [Cerebral Palsy: Its Individual And Community Problems](title)
+    - Tell me about the course [Issues in Business: Directed Research](title)
+    - I want information on [Nursing III: Management of Acute & Chronic Health Issues Across the Lifespan](title)
+    - Tell me about the course [Professional Applied Instrumental: Cello](title)
+    - I want information on [Clinical Practice I: Elementary Music](title)
+    - Tell me about the course [General Biology: Human Focus](title)
+    - What do you know about [Professions in Writing Arts: Post-Graduate Options](title)
 
-- regex: course_name
+- lookup: title
   examples: |
-    - [A-Z][A-Z0-9\s]*
+    - CYBER SEC: FUND, PRIN AND APPS
+    - Object Oriented Programming And Data Abstraction
+    - ETHICS, LEADERSHIP, & ADVOC
+    - Advanced Learning Assistant Seminar in Computer Science
+    - Software Engineering I
+    - Software Engineering II
+    - An Introduction To Economics-A Macroeconomic Perspective
+    - Advanced Database Systems: Theory And Programming
+    - Introduction to Ethics - WI
 
 - intent: find_classes
   examples: |
@@ -182,5 +198,33 @@ nlu:
 - regex: professor
   examples: |
     - [A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*
+- lookup: professor
+  examples: |
+    - Myers, Jack F
+    - Tinkham, Nancy
+    - Constant, Frantz
+    - Roh, James
+    - Stockton, Edward L
+    - Stinchcombe, Fred
+    - Sledjeski, Eve M
+    - Bogart, Daniel Fred
+    - Herman, Marlena F
+    - Hudson, Jaree
+    - Wang, Peng
+    - Valente, Lynne Marie
+    - Kaye, Melissa L
+    - Callueng, Carmelo Macarubbo
+    - Miller, Kathleen
+    - McFarland, Daniel J.
+    - Ehling, Ernest Henry
+    - Pierantozzi, Jeffrey C.
+    - Provine, Darren F. 
+    - Thorpe, Robert A
+    - Chakraborty, Dwaipayan
+    - Hristescu, Gabriela
+    - Bergmann, Seth
+    - Mousa, Tarek Awadalla
+    - Howell, Edward H
+    - Talley, Lee Allen
 
 

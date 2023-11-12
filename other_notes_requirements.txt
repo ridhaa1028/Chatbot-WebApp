@@ -1,0 +1,4 @@
+2023-11-11 22:39:32 ERROR    rasa.engine.graph  - Error initializing graph component for node provide_SpacyNLP0.
+InvalidModelError: Please confirm that en_core_web_md is an available spaCy model. You need to download one upfront. For example:
+python -m spacy download en_core_web_md
+More information can be found on https://rasa.com/docs/rasa/components#spacynlp

@@ -12,7 +12,8 @@ intents:
   - get_all_classes
   - find_classes
 entities:
-  - course_name
+  - title
+  - professor
 actions:
   - action_get_course_sections
   - action_get_all_classes
@@ -33,11 +34,11 @@ responses:
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
 slots:
-  course_name:
+  title:
     type: text
     mappings:
       - type: from_entity
-        entity: course_name
+        entity: title
   professor:
     type: text
     mappings:
