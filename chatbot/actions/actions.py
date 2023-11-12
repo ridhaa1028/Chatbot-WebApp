@@ -80,7 +80,7 @@ class GetCourseSectionsAction(Action):
             api_url = "http://localhost:5000/data_by_column"  # Update with your API URL
             params = {'column_name': ['title'], 'column_value': [course_name]}
 
-             # Send an empty JSON object in the request body
+            # Send an empty JSON object in the request body
             data = {}
 
             # Set the headers to specify that you're sending JSON
@@ -96,11 +96,14 @@ class GetCourseSectionsAction(Action):
                     formatted_sections = []
 
                     for item in data:
-                        section_info = "\n".join([f"{key}: {value}" for key, value in item.items()])
+                        section_info = "<br>".join([f"{key}: {value}" for key, value in item.items()])
                         formatted_sections.append(section_info)
 
-                    message = f"Here are all the sections for '{course_name}':\n\n"
-                    message += "\n".join(formatted_sections)
+                    # Create a message with HTML line breaks
+                    message = f"Here are all the sections for '{course_name}':<br><br>"
+                    message += "<br>".join(formatted_sections)
+
+                    # Send the message with custom formatting
                     dispatcher.utter_message(message)
                 else:
                     dispatcher.utter_message(f"Sorry, no sections found for '{course_name}'.")
@@ -109,7 +112,10 @@ class GetCourseSectionsAction(Action):
         else:
             dispatcher.utter_message("I couldn't find a course name in your message.")
 
-        return [SlotSet("course_name", course_name)]
+        return [SlotSet("course_name", None)]
+
+
+
 
 
 
@@ -153,3 +159,47 @@ class GetCourseSubjectAction(Action):
             dispatcher.utter_message("Sorry, I couldn't retrieve the course sections at the moment.")
 
         return [SlotSet("course_name", course_name)]
+
+class ActionGetProfessorSection(Action):
+    def name(self):
+        return "action_get_professor_classes"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        # Extract the course name from the slot or entity
+        professor = tracker.get_slot("professor")
+
+        if professor:
+            # Make a GET request to your API to filter by 'title'
+            api_url = "http://localhost:5000/data_by_column"  # Update with your API URL
+            params = {'column_name': ['prof'], 'column_value': [professor]}
+
+             # Send an empty JSON object in the request body
+            data = {}
+
+            # Set the headers to specify that you're sending JSON
+            headers = {"Content-Type": "application/json"}
+
+            response = requests.get(api_url, params=params, json=data, headers=headers)
+
+            if response.status_code == 200:
+                data = response.json()
+
+                if data:
+                    # Format the response to display course sections
+                    formatted_sections = []
+
+                    for item in data:
+                        section_info = "\n".join([f"{key}: {value}" for key, value in item.items()])
+                        formatted_sections.append(section_info)
+
+                    message = f"Here are all the sections for '{professor}':\n\n"
+                    message += "\n".join(formatted_sections)
+                    dispatcher.utter_message(message)
+                else:
+                    dispatcher.utter_message(f"Sorry, no sections found for '{professor}'.")
+            else:
+                dispatcher.utter_message("Sorry, I couldn't retrieve the course sections at the moment.")
+        else:
+            dispatcher.utter_message("I couldn't find the professor in your message.")
+
+        return [SlotSet("professor", professor)]

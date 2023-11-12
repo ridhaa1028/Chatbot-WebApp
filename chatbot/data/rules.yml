@@ -22,3 +22,8 @@ rules:
     - intent: get_all_classes
     - action: action_get_all_classes
 
+- rule: User requests professor classes
+  steps:
+    - intent: find_classes
+    - action: action_get_professor_classes
+

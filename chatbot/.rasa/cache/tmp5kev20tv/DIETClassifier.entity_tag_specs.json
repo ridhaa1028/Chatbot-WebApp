@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-course_name",
+      "2": "I-course_name",
+      "3": "L-course_name",
+      "4": "U-course_name",
+      "5": "B-professor",
+      "6": "I-professor",
+      "7": "L-professor",
+      "8": "U-professor",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-course_name": 1,
+      "I-course_name": 2,
+      "L-course_name": 3,
+      "U-course_name": 4,
+      "B-professor": 5,
+      "I-professor": 6,
+      "L-professor": 7,
+      "U-professor": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

@@ -18,6 +18,7 @@ class Course(Base):
 
     def __repr__(self):
         return f'<Course {self.crn}>'
+    
 
 
 

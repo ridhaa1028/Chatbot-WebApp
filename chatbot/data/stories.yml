@@ -38,3 +38,8 @@ stories:
   steps:
   - intent: specify_class
   - action: action_get_course_sections
+
+- story: Ask about classes taught by a professor
+  steps:
+  - intent: find_classes
+  - action: action_get_professor_classes

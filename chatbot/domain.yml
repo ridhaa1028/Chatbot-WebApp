@@ -10,12 +10,14 @@ intents:
   - bot_challenge
   - specify_class
   - get_all_classes
+  - find_classes
 entities:
   - course_name
 actions:
   - action_get_course_sections
   - action_get_all_classes
   - action_get_course_subjects
+  - action_get_professor_classes
 responses:
   utter_greet:
     - text: Hey! How are you?
@@ -36,6 +38,12 @@ slots:
     mappings:
       - type: from_entity
         entity: course_name
+  professor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: professor
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

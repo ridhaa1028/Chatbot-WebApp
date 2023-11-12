@@ -122,4 +122,65 @@ nlu:
   examples: |
     - [A-Z][A-Z0-9\s]*
 
+- intent: find_classes
+  examples: |
+    - Can you list the courses taught by [Myers, Jack F](professor)?
+    - Can you list the courses taught by [MYERS, JACK F](professor)?
+    - Can you list the courses taught by [myers, jack f](professor)?
+    - Can you list the courses taught by [Tinkham, Nancy](professor)?
+    - Can you list the courses taught by [TINKHAM, NANCY](professor)?
+    - Can you list the courses taught by [tinkham, nancy](professor)?
+    - Can you list the courses taught by [Constant, Frantz](professor)?
+    - Can you list the courses taught by [CONSTANT, FRANTZ](professor)?
+    - Can you list the courses taught by [constant, frantz](professor)?
+    - Can you list the courses taught by [Tetteh, Edem](professor)?
+    - Can you list the courses taught by [TETTEH, EDEM](professor)?
+    - Can you list the courses taught by [tetteh, edem](professor)?
+    - Can you list the courses taught by [Lesniewsicz, Stanley Walter](professor)?
+    - Can you list the courses taught by [LESNIEWSICZ, STANLEY WALTER](professor)?
+    - Can you list the courses taught by [lesniewsicz, stanley walter](professor)?
+    - Can you list the courses taught by [Jambro, John D](professor)?
+    - Can you list the courses taught by [JAMBRO, JOHN D](professor)?
+    - Can you list the courses taught by [jambro, john d](professor)?
+    - Can you list the courses taught by [Qu, Yuanmei](professor)?
+    - Can you list the courses taught by [QU, YUANMEI](professor)?
+    - Can you list the courses taught by [qu, yuanmei](professor)?
+    - Can you list the courses taught by [Yang, Yang](professor)?
+    - Can you list the courses taught by [YANG, YANG](professor)?
+    - Can you list the courses taught by [yang, yang](professor)?
+    - Can you list the courses taught by [Roh, James](professor)?
+    - Can you list the courses taught by [ROH, JAMES](professor)?
+    - Can you list the courses taught by [roh, james](professor)?
+    - Can you list the courses taught by [Stockton, Edward L](professor)?
+    - Can you list the courses taught by [STOCKTON, EDWARD L](professor)?
+    - Can you list the courses taught by [stockton, edward l](professor)?
+    - Can you list the courses taught by [Ehling, Ernest Henry](professor)?
+    - Can you list the courses taught by [EHLING, ERNEST HENRY](professor)?
+    - Can you list the courses taught by [ehling, ernest henry](professor)?
+    - Can you list the courses taught by [Stinchcombe, Fred](professor)?
+    - Can you list the courses taught by [STINCHCOMBE, FRED](professor)?
+    - Can you list the courses taught by [stinchcombe, fred](professor)?
+    - Can you list the courses taught by [Sledjeski, Eve M](professor)?
+    - Can you list the courses taught by [SLEDJESKI, EVE M](professor)?
+    - Can you list the courses taught by [sledjeski, eve m](professor)?
+    - Can you list the courses taught by [Bogart, Daniel Fred](professor)?
+    - Can you list the courses taught by [BOGART, DANIEL FRED](professor)?
+    - Can you list the courses taught by [bogart, daniel fred](professor)?
+    - Can you list the courses taught by [Herman, Marlena F](professor)?
+    - Can you list the courses taught by [HERMAN, MARLENA F](professor)?
+    - Can you list the courses taught by [herman, marlena f](professor)?
+    - Can you list the courses taught by [Hudson, Jaree](professor)?
+    - Can you list the courses taught by [HUDSON, JAREE](professor)?
+    - Can you list the courses taught by [hudson, jaree](professor)?
+    - Can you list the courses taught by [Wang, Qingjia Edward](professor)?
+    - Can you list the courses taught by [WANG, QINGJIA EDWARD](professor)?
+    - Can you list the courses taught by [wang, qingjia edward](professor)?
+    - Can you list the courses taught by [Dusk, Chie Matsumura](professor)?
+    - Can you list the courses taught by [DUSK, CHIE MATSUMURA](professor)?
+    - Can you list the courses taught by [dusk, chie matsumura](professor)?
+
+- regex: professor
+  examples: |
+    - [A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*
+
 
