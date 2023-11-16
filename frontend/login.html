@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <section class="login">
+        <div class="login_box">
+            <div class="left">
+                <div class="contact">
+                    <form action="index.html" method="post">
+                        <h3>SIGN IN</h3>
+                        <input type="text" name="username" placeholder="USERNAME">
+                        <input type="password" name="password" placeholder="PASSWORD">
+                        <button class="submit">Log In</button>
+                        <div class="additional-options">
+                            <a href="#" class="create-account">Create Account</a>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-inductor"><img src="rowan.png" alt="" class="center"></div>
+            </div>
+        </div>
+    </section>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        if ($username === "admin" && $password === "admin") {
+            header("Location: index.html"); // Redirect to the success page
+            exit;
+        } else {
+            // Authentication failed, you can display an error message.
+            echo "Invalid username or password. Please try again.";
+        }
+    }
+    ?>
+</body>
+
+</html>

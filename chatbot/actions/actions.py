@@ -202,4 +202,4 @@ class ActionGetProfessorSection(Action):
         else:
             dispatcher.utter_message("I couldn't find the professor in your message.")
 
-        return [SlotSet("professor", professor)]
+        return [SlotSet("professor", None)]

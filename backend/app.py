@@ -1,23 +1,3 @@
-# backend/app.py
-#from flask import Flask
-#from flask_restful import Api
-#from flask_sqlalchemy import SQLAlchemy
-
-#app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courses.db'
-#db = SQLAlchemy(app)
-#api = Api(app)
-
-# Import and add the resources
-#from api.all_data import AllDataResource
-#from api.data_by_column import DataByColumnResource
-
-#api.add_resource(AllDataResource, '/api/all_data')
-#api.add_resource(DataByColumnResource, '/api/data_by_column')
-
-#if __name__ == '__main__':
-#    app.run(debug=True)
-
 from flask import Flask
 from flask_restful import Api
 from sqlalchemy import create_engine
