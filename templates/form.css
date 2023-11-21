@@ -141,3 +141,17 @@
 .create-account:hover {
     background: #452A5A;
 }
+
+.flash-messages {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    /* Adjust the width as needed */
+    text-align: center;
+}
+
+.alert {
+    margin-bottom: 10px;
+}

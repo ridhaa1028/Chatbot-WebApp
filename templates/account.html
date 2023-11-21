@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Add your additional styles, meta tags, etc. here -->
+    <style>
+        /* Add your custom styles here */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .w3-sidebar {
+            background: gold;
+            font-weight: bold;
+        }
+
+        .w3-sidebar a {
+            color: black;
+        }
+
+        .user-info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .user-info-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .chat-container {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            margin-top: 20px;
+        }
+
+        /* Add your additional styles here */
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+        id="mySidebar">
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <!-- Add your sidebar links here -->
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Prof Bot</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <!-- Your existing content -->
+
+        <div class="user-info-container">
+            <h2>Your Account</h2>
+            <div id="user-info">
+                <!-- User information will be displayed here dynamically -->
+            </div>
+            <div class="chat-container">
+                <h2>Past Conversations</h2>
+                <!-- Your chatbox for past conversations here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch user information when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/auth/api/current_user')
+                .then(response => response.json())
+                .then(user => {
+                    const userInfoContainer = document.getElementById('user-info');
+                    userInfoContainer.innerHTML = `<p><strong>Username:</strong> ${user.username}</p><p><strong>Email:</strong> ${user.email}</p>`;
+                })
+                .catch(error => console.error('Error fetching user information:', error));
+        });
+    </script>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,48 +1,100 @@
-# Import request
-from flask import Blueprint, jsonify, request, current_app
-from sqlalchemy.exc import IntegrityError
-from .models_users import User
-from flask_bcrypt import Bcrypt
+from flask import Blueprint, render_template, redirect, url_for, flash, request
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager
+from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from .models_users import User, Base
 
 auth = Blueprint('auth', __name__)
-bcrypt = Bcrypt()
 
-@auth.route('/register', methods=['POST'])
+engine = create_engine('sqlite:///users.db')
+Base.metadata.create_all(bind=engine)
+UserSession = sessionmaker(bind=engine)
+
+# Initialize Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(auth)
+
+# Initialize Flask-JWT-Extended
+jwt = JWTManager()
+
+# Function to initialize JWT later when the app is created
+def initialize_jwt(app):
+    jwt.init_app(app)
+
+# User loader function for Flask-Login
+@login_manager.user_loader
+def load_user(user_id):
+    return UserSession().query(User).get(int(user_id))
+
+# New API route to get current user information
+@auth.route('/api/current_user', methods=['GET'])
+@login_required
+def get_current_user():
+    return jsonify({
+        'id': current_user.id,
+        'username': current_user.username,
+        'email': current_user.email
+    })
+
+@auth.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        session = UserSession()
+        user = session.query(User).filter_by(username=username).first()
+
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+            flash('Login successful.', 'success')
+            return redirect(url_for('home'))
+
+        flash('Login unsuccessful. Please check your username and password.', 'danger')
+
+    return render_template('login.html')
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Logout successful.', 'success')
+    return redirect(url_for('home'))
+
+@auth.route('/register', methods=['GET', 'POST'])
 def register():
-    data = request.form
-    hashed_password = bcrypt.generate_password_hash(data['password']).decode('utf-8')
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
 
-    new_user = User(username=data['username'], email=data['email'], password=hashed_password)
+        session = UserSession()
+        existing_user = session.query(User).filter((User.username == username) | (User.email == email)).first()
 
-    session = current_app.config['UserSession']()
-    try:
+        if existing_user:
+            flash('Username or email already exists. Please choose a different one.', 'danger')
+            return redirect(url_for('auth.register'))
+
+        new_user = User(username=username, email=email, password=generate_password_hash(password))
         session.add(new_user)
         session.commit()
-        access_token = create_access_token(identity=new_user.id)
-        return jsonify(access_token=access_token, message="Registration successful"), 201
-    except IntegrityError:
-        session.rollback()
-        return jsonify(message="User already exists"), 400
-    finally:
-        session.close()
 
-@auth.route('/login', methods=['POST'])
-def login():
-    data = request.form  # Use request.form to get form data
-    user = User.query.filter_by(username=data['username']).first()
+        flash('Registration successful. Please log in.', 'success')
+        return redirect(url_for('auth.login'))
 
-    if user and bcrypt.check_password_hash(user.password, data['password']):
-        access_token = create_access_token(identity=user.id)
-        return jsonify(access_token=access_token, message="Login successful"), 200
-    else:
-        return jsonify(message="Invalid username or password"), 401
+    return render_template('register.html')
 
-@auth.route('/protected', methods=['GET'])
-@jwt_required()
-def protected():
-    current_user_id = get_jwt_identity()
-    return jsonify(logged_in_as=current_user_id), 200
+# JWT token generation route
+@auth.route('/get_token', methods=['POST'])
+@login_required
+def get_token():
+    access_token = create_access_token(identity=current_user.id)
+    return {'access_token': access_token}
+
+
 
 
 

@@ -1,19 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS
 from flask_restful import Api
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker  # Import sessionmaker
-from .models import Base as CourseBase  # Import Base from your models.py
-from .models_users import Base as UserBase  # Import the Base from models_users.py
+from sqlalchemy.orm import sessionmaker
+from .models import Base as CourseBase
+from .models_users import Base as UserBase
+from .auth import auth, User, login_required, current_user
 from flask_jwt_extended import JWTManager
-from .auth import auth
+from .auth import auth, User, login_required
+from flask_login import LoginManager
+from .auth import initialize_jwt, login_manager
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
+app.secret_key = 'your_secret_key'  # Set your secret key here
 CORS(app)  # Enable CORS for all routes
-
-# Set up JWT for user authentication
-app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'
-jwt = JWTManager(app)
 
 # Create an SQLAlchemy engine for general data (courses)
 courses_data_engine = create_engine('sqlite:///courses.db')
@@ -28,6 +28,12 @@ UserBase.metadata.bind = user_data_engine
 
 # Create the database and tables
 UserBase.metadata.create_all(bind=user_data_engine)
+
+# Initialize Flask-JWT-Extended
+initialize_jwt(app)
+
+# Initialize Flask-Login
+login_manager.init_app(app)
 
 # Create an SQLAlchemy session for user data
 UserSession = sessionmaker(bind=user_data_engine)
@@ -47,6 +53,18 @@ api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs=
 if __name__ == '__main__':
     app.run(debug=True)
 
+# Home route
+@app.route('/')
+def home():
+    if current_user.is_authenticated:
+        return render_template('index2.html', logged_in=True)
+    else:
+        return render_template('index.html', logged_in=False)
+
+@app.route('/account')
+def account():
+    if current_user.is_authenticated:
+        return render_template('account.html')
 
 
 
