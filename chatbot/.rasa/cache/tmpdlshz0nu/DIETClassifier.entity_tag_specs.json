@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-professor",
+      "2": "I-professor",
+      "3": "L-professor",
+      "4": "U-professor",
+      "5": "B-title",
+      "6": "I-title",
+      "7": "L-title",
+      "8": "U-title",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-professor": 1,
+      "I-professor": 2,
+      "L-professor": 3,
+      "U-professor": 4,
+      "B-title": 5,
+      "I-title": 6,
+      "L-title": 7,
+      "U-title": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

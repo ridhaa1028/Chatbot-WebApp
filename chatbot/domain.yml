@@ -11,13 +11,17 @@ intents:
   - specify_class
   - get_all_classes
   - find_classes
+  - description_class
 entities:
-  - course_name
+  - title
+  - professor
+  - course
 actions:
   - action_get_course_sections
   - action_get_all_classes
   - action_get_course_subjects
   - action_get_professor_classes
+  - action_get_course_description
 responses:
   utter_greet:
     - text: Hey! How are you?
@@ -33,16 +37,23 @@ responses:
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
 slots:
-  course_name:
+  title:
     type: text
     mappings:
       - type: from_entity
-        entity: course_name
+        entity: title
   professor:
     type: text
     mappings:
       - type: from_entity
         entity: professor
+  course:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: course
+
+    
 
 session_config:
   session_expiration_time: 60

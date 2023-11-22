@@ -16,11 +16,12 @@ app.secret_key = 'your_secret_key'  # Set your secret key here
 CORS(app)  # Enable CORS for all routes
 
 # Create an SQLAlchemy engine for general data (courses)
-courses_data_engine = create_engine('sqlite:///courses.db')
-CourseBase.metadata.bind = courses_data_engine
+# Create an SQLAlchemy engine
+engine = create_engine('sqlite:///courses.db')
 
 # Create an SQLAlchemy session for general data (courses)
-CourseSession = sessionmaker(bind=courses_data_engine)
+# Create an SQLAlchemy session
+Session = sessionmaker(bind=engine)
 
 # Create an SQLAlchemy engine for user data
 user_data_engine = create_engine('sqlite:///users.db')
@@ -45,10 +46,12 @@ app.register_blueprint(auth, url_prefix='/auth')
 # Import and add the resources
 from .all_data import AllDataResource  # Update with your actual import path
 from .data_by_column import DataByColumnResource  # Update with your actual import path
+from .catalog_data_by_column import CourseDataByColumnResource
 
 api = Api(app)
-api.add_resource(AllDataResource, '/all_data', resource_class_kwargs={'Session': CourseSession})
-api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs={'Session': CourseSession})
+api.add_resource(AllDataResource, '/all_data', resource_class_kwargs={'Session': Session})
+api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs={'Session': Session})
+api.add_resource(CourseDataByColumnResource, '/catalog_data_by_column', resource_class_kwargs={'Session': Session})
 
 if __name__ == '__main__':
     app.run(debug=True)

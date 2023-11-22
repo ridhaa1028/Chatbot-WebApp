@@ -35,23 +35,23 @@ class Conversation(Base):
     def get_id(self):
         return str(self.id)
 
-@app.route('/add_line', methods=['POST'])
-def add_line():
-    data = request.get_json()
+# @app.route('/add_line', methods=['POST'])
+# def add_line():
+#     data = request.get_json()
 
-    if 'user_id' not in data or 'content' not in data:
-        return jsonify({'error': 'Missing user_id or content'}), 400
+#     if 'user_id' not in data or 'content' not in data:
+#         return jsonify({'error': 'Missing user_id or content'}), 400
 
-    user_id = data['user_id']
-    content = data['content']
+#     user_id = data['user_id']
+#     content = data['content']
 
-    user = User.query.get(user_id)
+#     user = User.query.get(user_id)
 
-    if not user:
-        return jsonify({'error': 'User not found'}), 404
+#     if not user:
+#         return jsonify({'error': 'User not found'}), 404
 
-    conversation = Conversation(content=content, author=user)
-    db.session.add(conversation)
-    db.session.commit()
+#     conversation = Conversation(content=content, author=user)
+#     db.session.add(conversation)
+#     db.session.commit()
 
-    return jsonify({'message': 'Line added successfully'}), 201
+#     return jsonify({'message': 'Line added successfully'}), 201

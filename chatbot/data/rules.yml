@@ -27,3 +27,8 @@ rules:
     - intent: find_classes
     - action: action_get_professor_classes
 
+- rule: User requests course description
+  steps:
+    - intent: description_class
+    - action: action_get_course_description
+
