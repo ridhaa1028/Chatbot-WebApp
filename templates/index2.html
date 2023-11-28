@@ -64,7 +64,7 @@
 
         .user-message {
             background-color: gold;
-            color: #fff;
+            color: #57150B;
             align-self: flex-end;
         }
 
@@ -113,7 +113,7 @@
             <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
         </div>
         <div class="w3-bar-block">
-            <a href="javascript:void(0)" onclick="openAccountPage()" class="w3-bar-item w3-button w3-hover-white">Your Account</a>
+            <a href="http://localhost:5000/account" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Your Account</a>
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
             <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
         </div>
@@ -210,9 +210,8 @@
 
             
             function openAccountPage() {
-                    // Make an AJAX request to the /account endpoint
-                    fetch('/account')
-                        .catch(error => console.error('Error fetching /account:', error));
+                    // Navigate to the "account.html" page
+                    window.location.href = "account.html";
 
                     // Close the sidebar after navigating
                     w3_close();
