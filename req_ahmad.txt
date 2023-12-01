@@ -1,0 +1,9 @@
+flask
+flask_restful
+sqlalchemy
+rasa
+requests
+spacy
+flask_cors
+flask_login
+flask_jwt_extended
