@@ -5,10 +5,3 @@ from sectiontally_actions import *
 from catalog_actions import *
 from infrastructure_actions import *
 from events_actions import *
-
-
-
-
-
-
-
