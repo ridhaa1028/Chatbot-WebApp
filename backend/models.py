@@ -1,9 +1,12 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float
 from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
+CourseBase = declarative_base()
+InfrastructureBase = declarative_base()
+EventsBase = declarative_base()
 
-class SectionTally(Base):
+
+class SectionTally(CourseBase):
     __tablename__ = 'section_tally'
 
     crn = Column(Integer, primary_key=True)
@@ -19,7 +22,7 @@ class SectionTally(Base):
     def __repr__(self):
         return f'<Course {self.crn}>'
     
-class Catalog(Base):
+class Catalog(CourseBase):
     __tablename__ = 'catalog'
 
     subj = Column(String(255), nullable=False)
@@ -32,7 +35,7 @@ class Catalog(Base):
     def __repr__(self):
         return f'<Catalog {self.subj} {self.crse}>'
     
-class Infrastructure(Base):
+class Infrastructure(InfrastructureBase):
     __tablename__ = 'locations'
 
     id = Column(Integer, primary_key=True)
@@ -47,7 +50,7 @@ class Infrastructure(Base):
     def __repr__(self):
         return f'<Location {self.id}:  {self.name}>'
 
-class CurrentEvents(Base):
+class CurrentEvents(EventsBase):
     __tablename__ = 'events'
 
     id = Column(Integer, primary_key=True)

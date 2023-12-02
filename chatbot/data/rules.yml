@@ -32,3 +32,18 @@ rules:
     - intent: description_class
     - action: action_get_course_description
 
+- rule: User requests course description
+  steps:
+    - intent: description_class
+    - action: action_get_course_description
+
+- rule: User tests events
+  steps:
+    - intent: test_events
+    - action: action_test_events
+
+- rule: User tests locations
+  steps:
+    - intent: test_infrastructure
+    - action: action_test_infrastructure
+ 

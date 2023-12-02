@@ -12,6 +12,9 @@ intents:
   - get_all_classes
   - find_classes
   - description_class
+  - test_events
+  - test_infrastructure
+  
 entities:
   - title
   - professor
@@ -22,6 +25,8 @@ actions:
   - action_get_course_subjects
   - action_get_professor_classes
   - action_get_course_description
+  - action_test_events
+  - action_test_infrastructure
 responses:
   utter_greet:
     - text: Hey! How are you?

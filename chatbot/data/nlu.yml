@@ -268,4 +268,16 @@ nlu:
     - Advanced Database Systems: Theory And Programming
     - Introduction to Ethics - WI
 
+- intent: test_events
+  examples: |
+    - I want to test events
+    - Show me events
+    - Lets do events
+
+- intent: test_infrastructure
+  examples: |
+    - I want to test infrastructure
+    - Show me infrastructure
+    - Lets do infrastructure
+    
 

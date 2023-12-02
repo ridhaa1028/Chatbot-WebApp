@@ -3,13 +3,14 @@ from flask_cors import CORS
 from flask_restful import Api
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from .models import Base as CourseBase
+from .models import CourseBase, InfrastructureBase, EventsBase
 from .models_users import Base as UserBase
 from .auth import auth, User, login_required, current_user
 from flask_jwt_extended import JWTManager
 from .auth import auth, User, login_required
 from flask_login import LoginManager
 from .auth import initialize_jwt, login_manager
+
 
 app = Flask(__name__, template_folder='../templates')
 app.secret_key = 'your_secret_key'  # Set your secret key here
@@ -30,6 +31,23 @@ UserBase.metadata.bind = user_data_engine
 # Create the database and tables
 UserBase.metadata.create_all(bind=user_data_engine)
 
+# IDK HOW THIS WORKS LET ME JUST TRY THIS - Muhammad
+loc_data_engine = create_engine('sqlite:///infrastructure.db')
+events_data_engine = create_engine('sqlite:///events.db')
+
+InfrastructureSession = sessionmaker(bind=loc_data_engine)
+EventsSession = sessionmaker(bind=events_data_engine)
+
+
+InfrastructureBase.metadata.bind = loc_data_engine
+InfrastructureBase.metadata.create_all(bind=loc_data_engine)
+
+EventsBase.metadata.bind = events_data_engine
+EventsBase.metadata.create_all(bind=events_data_engine)
+
+
+#################################################
+
 # Initialize Flask-JWT-Extended
 initialize_jwt(app)
 
@@ -47,11 +65,15 @@ app.register_blueprint(auth, url_prefix='/auth')
 from .all_data import AllDataResource  # Update with your actual import path
 from .data_by_column import DataByColumnResource  # Update with your actual import path
 from .catalog_data_by_column import CourseDataByColumnResource
+from .events_data_by_column import EventsDataByColumnResource
+from .infrastructure_data_by_column import InfrastructureDataByColumnResource
 
 api = Api(app)
 api.add_resource(AllDataResource, '/all_data', resource_class_kwargs={'Session': Session})
 api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs={'Session': Session})
 api.add_resource(CourseDataByColumnResource, '/catalog_data_by_column', resource_class_kwargs={'Session': Session})
+api.add_resource(EventsDataByColumnResource, '/events_data_by_column', resource_class_kwargs={'Session': EventsSession})
+api.add_resource(InfrastructureDataByColumnResource, '/infrastructure_data_by_column', resource_class_kwargs={'Session': InfrastructureSession})
 
 if __name__ == '__main__':
     app.run(debug=True)

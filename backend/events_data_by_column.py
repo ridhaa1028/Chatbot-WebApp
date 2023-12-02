@@ -19,7 +19,7 @@ class EventsDataByColumnResource(Resource):
             return jsonify({"error": "You must provide at least one column_name and one column_value."}), 400
 
         # Define the list of valid column names to prevent SQL injection
-        valid_columns = ['name', 'description', 'host', 'location', 'start', 'end', 'last_modified', 'url']
+        valid_columns = ['id', 'name', 'description', 'host', 'location', 'start', 'end', 'last_modified', 'url']
 
         # Validate the provided column names
         invalid_columns = [col for col in column_names if col not in valid_columns]
