@@ -1,0 +1,37 @@
+[{categories': 'Academic Buildings', 
+
+'departments': 'Radio/TV/Film.', 
+
+'description': 'Originally built as a campus demonstration elementary school, Bozorth Hall houses the College of Communication & Creative Arts offices, 
+Rowan Radio, Rowan TV, a distance learning classroom, film-editing facilities, a computer-equipped journalism newsroom, an advertising/PR client suite, 
+a layout room, and a computer-equipped writing laboratory. ', 
+
+'id': 5, 
+
+'keywords': 'communication and creative arts, rowan radio, rowan TV, newsroom, writing, writing lab,', 
+
+'latitude': 39.708061, 
+
+'longitude': -75.121704, 
+
+'name': 'Bozorth Hall'}]
+
+
+
+[{'categories': 'Academic Buildings', 
+
+'departments': 'Radio/TV/Film.', 
+
+'description': 'Originally built as a campus demonstration elementary school, Bozorth Hall houses the College of Communication & Creative Arts offices, 
+Rowan Radio, Rowan TV, a distance learning classroom, film-editing facilities, a computer-equipped journalism newsroom, an advertising/PR client suite, 
+a layout room, and a computer-equipped writing laboratory. ', 
+
+'id': 5, 
+
+'keywords': 'communication and creative arts, rowan radio, rowan TV, newsroom, writing, writing lab,', 
+
+'latitude': 39.708061, 
+
+'longitude': -75.121704, 
+
+'name': 'Bozorth Hall'}]

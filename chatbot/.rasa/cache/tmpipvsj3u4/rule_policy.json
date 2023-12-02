@@ -1,0 +1,30 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"specify_class\"}}]": "action_get_course_sections",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"specify_class\"}}, {\"prev_action\": {\"action_name\": \"action_get_course_sections\"}, \"user\": {\"intent\": \"specify_class\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"get_all_classes\"}}]": "action_get_all_classes",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"get_all_classes\"}}, {\"prev_action\": {\"action_name\": \"action_get_all_classes\"}, \"user\": {\"intent\": \"get_all_classes\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_infrastructure\"}}]": "action_test_infrastructure",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_infrastructure\"}}, {\"prev_action\": {\"action_name\": \"action_test_infrastructure\"}, \"user\": {\"intent\": \"test_infrastructure\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_events\"}}]": "action_test_events",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_events\"}}, {\"prev_action\": {\"action_name\": \"action_test_events\"}, \"user\": {\"intent\": \"test_events\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"find_classes\"}}]": "action_get_professor_classes",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"find_classes\"}}, {\"prev_action\": {\"action_name\": \"action_get_professor_classes\"}, \"user\": {\"intent\": \"find_classes\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"description_class\"}}]": "action_get_course_description",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"description_class\"}}, {\"prev_action\": {\"action_name\": \"action_get_course_description\"}, \"user\": {\"intent\": \"description_class\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_infrastructure\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_events\"}}, {\"prev_action\": {\"action_name\": \"action_test_events\"}, \"user\": {\"intent\": \"test_events\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_infrastructure\"}}, {\"prev_action\": {\"action_name\": \"action_test_infrastructure\"}, \"user\": {\"intent\": \"test_infrastructure\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_events\"}}]"
+    ]
+  }
+}

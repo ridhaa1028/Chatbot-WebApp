@@ -8,11 +8,9 @@ intents:
   - description_class
   - test_events
   - test_infrastructure
-  
 entities:
   - title
   - professor
-  - course
 actions:
   - action_get_course_sections
   - action_get_all_classes
@@ -35,11 +33,6 @@ slots:
     mappings:
       - type: from_entity
         entity: professor
-  course:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: course
 
 
 session_config:
