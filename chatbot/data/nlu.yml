@@ -270,3 +270,43 @@ nlu:
     - Tell me about the Administrative Buildings on campus
     - What are all the support Buildings on campus?
     - Tell me about the support Buildings on campus
+  
+- intent: ask_events_right_now
+  examples: |
+    - Is there an event going on right now?
+    - What events are going on at this time?
+    - What events are happening right now?
+
+- intent: ask_events_tomorrow
+  examples: |
+    - Is there an event going on tomorrow?
+    - What events are going on tomorrow?
+    - What events are happening tomorrow?
+
+- intent: ask_events_week
+  examples: |
+    - Is there an event upcoming this week?
+    - What events are going on in the coming week?
+    - What events will take place this week?
+
+- intent: tell_me_more_about_event
+  examples: |
+    - Tell me more about the event BEL Business Expo
+    - Give me more details about the event Yoga Flow
+    - What can you tell me about the event Transgender Day of Remembrance and Resiliency
+    - Tell me more about the event SGA Advancement Committee Meeting
+    - Tell me more about the event Rowan Chi Alpha Pie Fest
+    - Tell me more about the event BodyPump
+    - Tell me more about the event Pilates Fusion
+
+- intent: ask_specific_kind_of_event
+  examples: |
+    - Is there any upcoming event related to: Anime and Video Games
+    - Is there any upcoming event related to: Basketball
+    - Is there any upcoming event related to: Chess
+    - Is there any upcoming event related to: Dancing
+    - Is there any upcoming event related to: Books and reading
+    - Is there any upcoming event related to: Board Games
+    - Is there any upcoming event related to: Religion and Spirituality
+    - Is there any upcoming event related to: Programming
+    - Is there any upcoming event related to: Business

@@ -2,7 +2,6 @@ import requests
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 
-# Now you can import your module
 from .models import InfrastructureBase
 from .models import Infrastructure
 
@@ -240,13 +239,13 @@ class AskAdminAction(Action):
         return "action_ask_for_admin"
     def run(self, dispatcher, tracker, domain):
         with Session() as session:
-            AcademicBuildings = session.query(Infrastructure.name).filter(Infrastructure.categories == 'Administrative & Support').all()
-            AcademicBuildings = [d[0] for d in AcademicBuildings]
+            AdminBuildings = session.query(Infrastructure.name).filter(Infrastructure.categories == 'Administrative & Support').all()
+            AdminBuildings = [d[0] for d in AdminBuildings]
 
         s1 = "<br>Rowan University has many places for administration or support are the Glassboro campus.<br>"
-        s2 = "Here are all of the Academic Buildings:<br>"
+        s2 = "Here are all of the Administrative or Support Buildings:<br>"
         s3 = ""
-        for b in AcademicBuildings:
+        for b in AdminBuildings:
             s3 += b
             s3 += '<br>'
         s4 = "Feel free to ask more about a specific building such as where it's located for directions!"

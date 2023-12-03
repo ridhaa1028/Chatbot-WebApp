@@ -86,3 +86,31 @@ rules:
   steps:
     - intent: ask_for_admin
     - action: action_ask_for_admin
+    
+- rule: User asks about events right now 
+  steps:
+    - intent: ask_events_right_now
+    - action: action_ask_events_right_now
+
+- rule: User asks about events tomorrow 
+  steps:
+    - intent: ask_events_tomorrow
+    - action: action_ask_events_tomorrow
+
+- rule: User asks about events week 
+  steps:
+    - intent: ask_events_week
+    - action: action_ask_events_week
+
+- rule: User asks about details on event 
+  steps:
+    - intent: tell_me_more_about_event
+    - action: action_tell_me_more_about_event
+
+- rule: User try to see if there is a specific event 
+  steps:
+    - intent: ask_specific_kind_of_event
+    - action: action_ask_specific_kind_of_event
+
+  
+

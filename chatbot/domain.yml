@@ -18,6 +18,11 @@ intents:
   - ask_for_residence
   - ask_for_academics
   - ask_for_admin
+  - ask_events_right_now
+  - ask_events_tomorrow
+  - ask_events_week
+  - tell_me_more_about_event
+  - ask_specific_kind_of_event
 entities:
   - title
   - professor
@@ -39,6 +44,11 @@ actions:
   - action_ask_for_residence
   - action_ask_for_academics
   - action_ask_for_admin
+  - action_ask_events_right_now
+  - action_ask_events_tomorrow
+  - action_ask_events_week
+  - action_tell_me_more_about_event
+  - action_ask_specific_kind_of_event
 responses:
   utter_greet:
     - text: Hi, Welcome to ProfBot, your personal Rowan University assistant! How can I help?
