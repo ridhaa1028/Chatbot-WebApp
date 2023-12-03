@@ -69,7 +69,7 @@ class AskForLocationAction(Action):
         else:
             # Handle invalid query format
             dispatcher.utter_message("Please ask in the format: 'Where is [name] located?'")
-        session.close()
+        
 
 class TellMeMoreLocationAction(Action):
     def name(self):
@@ -99,7 +99,7 @@ class TellMeMoreLocationAction(Action):
                     dispatcher.utter_message("Sorry, I couldn't find that location.")
         else:
             dispatcher.utter_message("Please ask in the format: Tell me more about the place [name]")
-        session.close()
+        
     
 class AskLandmarkAction(Action):
     def name(self):
@@ -123,7 +123,7 @@ class AskLandmarkAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 class AskDepartmentAction(Action):
     def name(self):
@@ -145,7 +145,7 @@ class AskDepartmentAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 class AskBathroomsAction(Action):
     def name(self):
@@ -166,7 +166,7 @@ class AskBathroomsAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+    
 
 
 class AskParkingAction(Action):
@@ -189,7 +189,7 @@ class AskParkingAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 class AskResidenceAction(Action):
     def name(self):
@@ -210,7 +210,7 @@ class AskResidenceAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 class AskAcademicsAction(Action):
     def name(self):
@@ -231,7 +231,7 @@ class AskAcademicsAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 
 class AskAdminAction(Action):
@@ -253,7 +253,7 @@ class AskAdminAction(Action):
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        session.close()
+        
 
 
 
