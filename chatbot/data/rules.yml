@@ -36,4 +36,53 @@ rules:
   steps:
     - intent: test_infrastructure
     - action: action_test_infrastructure
- 
+
+- rule: User asks about infrastructure general 
+  steps:
+    - intent: what_tell_me_about_infrastructure
+    - action: action_what_tell_me_about_infrastructure
+
+- rule: User asks for location 
+  steps:
+    - intent: ask_for_location
+    - action: action_ask_for_location
+
+- rule: User asks for more detail on place 
+  steps:
+    - intent: tell_me_more_about_location
+    - action: action_tell_me_more_about_location
+
+- rule: User asks about landmarks 
+  steps:
+    - intent: ask_for_landmarks
+    - action: action_ask_for_landmarks
+
+- rule: User asks about departments 
+  steps:
+    - intent: ask_for_departments
+    - action: action_ask_for_departments
+  
+- rule: User asks bathrooms 
+  steps:
+    - intent: ask_for_bathrooms
+    - action: action_ask_for_bathrooms
+
+- rule: User asks about parking 
+  steps:
+    - intent: ask_for_parking
+    - action: action_ask_for_parking
+
+- rule: User asks about residence 
+  steps:
+    - intent: ask_for_residence
+    - action: action_ask_for_residence
+
+- rule: User asks about academic buildings 
+  steps:
+    - intent: ask_for_academics
+    - action: action_ask_for_academics
+
+- rule: User asks about admin 
+  steps:
+    - intent: ask_for_admin
+    - action: action_ask_for_admin

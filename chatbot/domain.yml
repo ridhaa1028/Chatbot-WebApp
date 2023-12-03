@@ -8,6 +8,16 @@ intents:
   - description_class
   - test_events
   - test_infrastructure
+  - what_tell_me_about_infrastructure
+  - ask_for_location
+  - tell_me_more_about_location
+  - ask_for_landmarks
+  - ask_for_departments
+  - ask_for_bathrooms
+  - ask_for_parking
+  - ask_for_residence
+  - ask_for_academics
+  - ask_for_admin
 entities:
   - title
   - professor
@@ -19,6 +29,16 @@ actions:
   - action_get_course_description
   - action_test_events
   - action_test_infrastructure
+  - action_what_tell_me_about_infrastructure
+  - action_ask_for_location
+  - action_tell_me_more_about_location
+  - action_ask_for_landmarks
+  - action_ask_for_departments
+  - action_ask_for_bathrooms
+  - action_ask_for_parking
+  - action_ask_for_residence
+  - action_ask_for_academics
+  - action_ask_for_admin
 responses:
   utter_greet:
     - text: Hi, Welcome to ProfBot, your personal Rowan University assistant! How can I help?
@@ -33,7 +53,6 @@ slots:
     mappings:
       - type: from_entity
         entity: professor
-
 
 session_config:
   session_expiration_time: 60

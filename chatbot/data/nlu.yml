@@ -194,5 +194,79 @@ nlu:
     - I want to test infrastructure
     - Show me infrastructure
     - Lets do infrastructure
+  
+- intent: what_tell_me_about_infrastructure
+  examples: |
+    - What can you tell me about the infrastructure of Rowan
+    - What are the different locations on campus
+    - What can you tell me about the locations on campus
+    - What can you tell me about the buildings on campus
+    - Explain locations
+    - Tell me about the locations
     
+- intent: ask_for_location
+  examples: |
+    - Where is 230 Victoria located?
+    - Where is 301 West High Street located?
+    - Where is 6 High Street located?
+    - Where is Whitney Center located?
+    - Where is Lot F-1 located?
+    - Where is Lot A-1 located?
+    - Where is Rowan Boulevard Garage located?
+    - Where is Baseball Field located?
+    - Where is Esbjornson Gym located?
+    - Where is Shuttle Stop Main Campus 1 located?
+    - Where is Memorial Hall Restrooms located?
+    - Where is the Department of Nursing located?
+    - Where is Department of Theatre and Dance located?
+    - Where is the Department of Political Science and Economics located?
+    - Where is Department of Computer Science located?
 
+- intent: tell_me_more_about_location
+  examples: |
+    - Tell me more about the place location a
+    - Give me more details about the place location b
+    - What can you tell me about the place location c
+    - Tell me more about the place 230 Victoria
+    - Tell me more about the place Rowan Boulevard Garage
+    - Tell me more about the place Esbjornson Gym
+    - Tell me more about the place Department of Nursing
+    
+- intent: ask_for_landmarks
+  examples: |
+    - What are all the landmarks on campus?
+    - Tell me about the landmarks on campus
+  
+- intent: ask_for_departments
+  examples: |
+    - What are all the departments on campus?
+    - Tell me about the departments on campus
+
+- intent: ask_for_bathrooms
+  examples: |
+    - What are all the bathrooms on campus?
+    - Tell me about the bathrooms on campus
+
+- intent: ask_for_parking
+  examples: |
+    - What are all the parking spots on campus?
+    - Tell me about the parking spots on campus
+    - What are all the parking spaces on campus?
+    - Tell me about the parking spaces on campus
+
+- intent: ask_for_residence
+  examples: |
+    - What are all the residence halls on campus?
+    - Tell me about the residence halls on campus
+  
+- intent: ask_for_academics
+  examples: |
+    - What are all the Academic Buildings on campus?
+    - Tell me about the Academic Buildings on campus
+
+- intent: ask_for_admin
+  examples: |
+    - What are all the Administrative Buildings on campus?
+    - Tell me about the Administrative Buildings on campus
+    - What are all the support Buildings on campus?
+    - Tell me about the support Buildings on campus
