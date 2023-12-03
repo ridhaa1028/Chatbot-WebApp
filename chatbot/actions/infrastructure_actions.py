@@ -168,7 +168,6 @@ class AskBathroomsAction(Action):
         dispatcher.utter_message(message)
     
 
-
 class AskParkingAction(Action):
     def name(self):
         return "action_ask_for_parking"
@@ -233,7 +232,6 @@ class AskAcademicsAction(Action):
         dispatcher.utter_message(message)
         
 
-
 class AskAdminAction(Action):
     def name(self):
         return "action_ask_for_admin"
@@ -246,15 +244,58 @@ class AskAdminAction(Action):
         s2 = "Here are all of the Administrative or Support Buildings:<br>"
         s3 = ""
         for b in AdminBuildings:
-            s3 += b
+            s3 += b 
             s3 += '<br>'
         s4 = "Feel free to ask more about a specific building such as where it's located for directions!"
         message = ""
         for s in [s1, s2, s3, s4]:
             message += s + '<br>'
         dispatcher.utter_message(message)
-        
+        # f'<a href="{event.url}">{event.name}</a><br>'
 
+
+class TestInfrastructureAction(Action):
+    def name(self):
+        return "action_test_infrastructure"
+
+    def run(self, dispatcher, tracker, domain):
+        # Make a GET request to your API to filter by ....
+        api_url = "http://localhost:5000/infrastructure_data_by_column"  # Update with your API URL
+        params = {'column_name': ['id'], 'column_value': [5]}
+
+        # Send an empty JSON object in the request body
+        data = {}
+
+        # Set the headers to specify that you're sending JSON
+        headers = {"Content-Type": "application/json"}
+
+        response = requests.get(api_url, params=params, json=data, headers=headers)
+
+        if response.status_code == 200:
+            data = response.json()
+
+            if data:
+                # Format the response to ...
+                selected_fields = ['name', 'categories', 'description'] # can use this list for both enforcing order and limiting columns
+
+                # Can use this to rename the fields better
+                field_mapping = {
+                    'name': 'NAME',
+                    'categories': 'CATEGORIES',
+                    'description': 'DESCRIPTION'
+                }
+                data_dict = dict()
+                for item in data:
+                    for key in item:
+                        data_dict[key] = item[key]
+                print(data)
+                message = f"Here is one of the locations:<br><br>"
+                message += (f"The name of this location is {data_dict['name']}")
+                dispatcher.utter_message(message)
+            else:
+                dispatcher.utter_message(f"Sorry nothing found.")
+        else:
+            dispatcher.utter_message("Sorry, I couldn't retrieve a location at the moment.") 
 
 
 
@@ -303,47 +344,3 @@ class AskAdminAction(Action):
                 dispatcher.utter_message(f"Sorry nothing found.")
         else:
             dispatcher.utter_message("Sorry, I couldn't retrieve a location at the moment.")  """
-
-
-class TestInfrastructureAction(Action):
-    def name(self):
-        return "action_test_infrastructure"
-
-    def run(self, dispatcher, tracker, domain):
-        # Make a GET request to your API to filter by ....
-        api_url = "http://localhost:5000/infrastructure_data_by_column"  # Update with your API URL
-        params = {'column_name': ['id'], 'column_value': [5]}
-
-        # Send an empty JSON object in the request body
-        data = {}
-
-        # Set the headers to specify that you're sending JSON
-        headers = {"Content-Type": "application/json"}
-
-        response = requests.get(api_url, params=params, json=data, headers=headers)
-
-        if response.status_code == 200:
-            data = response.json()
-
-            if data:
-                # Format the response to ...
-                selected_fields = ['name', 'categories', 'description'] # can use this list for both enforcing order and limiting columns
-
-                # Can use this to rename the fields better
-                field_mapping = {
-                    'name': 'NAME',
-                    'categories': 'CATEGORIES',
-                    'description': 'DESCRIPTION'
-                }
-                data_dict = dict()
-                for item in data:
-                    for key in item:
-                        data_dict[key] = item[key]
-                print(data)
-                message = f"Here is one of the locations:<br><br>"
-                message += (f"The name of this location is {data_dict['name']}")
-                dispatcher.utter_message(message)
-            else:
-                dispatcher.utter_message(f"Sorry nothing found.")
-        else:
-            dispatcher.utter_message("Sorry, I couldn't retrieve a location at the moment.") 

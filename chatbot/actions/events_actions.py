@@ -27,14 +27,12 @@ class AskEventNowAction(Action):
         current_time = datetime.now()
 
         with Session() as session:
-            # Assuming your events table and columns are set up this way
-            # Replace Event with your actual event model name
             current_events = session.query(CurrentEvents).filter(
                 CurrentEvents.start <= current_time,
                 CurrentEvents.end >= current_time
             ).all()
 
-        # Prepare the response message
+        
         if current_events:
             message = "<br>Here are the events happening right now:<br>"
             for event in current_events:
@@ -43,11 +41,10 @@ class AskEventNowAction(Action):
         else:
             message = "<br>There are no events happening at this moment.<br>"
 
-        # Dispatch the message
+        
         dispatcher.utter_message(message)
 
-        # Close the session if needed (depends on your session management)
-        session.close()
+        
 
 class AskEventTomorrowAction(Action):
     def name(self):
@@ -66,7 +63,7 @@ class AskEventTomorrowAction(Action):
                 CurrentEvents.end <= end_of_tomorrow
             ).all()
 
-        # Prepare and dispatch the message
+        
         if events_tomorrow:
             message = f"<br>Here are the events happening tomorrow {tomorrow.strftime('%A')} {tomorrow}:<br>"
             for event in events_tomorrow:
@@ -78,7 +75,7 @@ class AskEventTomorrowAction(Action):
         
         dispatcher.utter_message(message)
 
-        session.close()
+        
 
 class AskEventWeekAction(Action):
     def name(self):
@@ -92,7 +89,7 @@ class AskEventWeekAction(Action):
         current_time = today
 
         with Session() as session:
-            # Query for past events this week
+            
             past_events_this_week = session.query(CurrentEvents).filter(
                 CurrentEvents.start >= start_of_week,
                 CurrentEvents.start <= end_of_week,
@@ -108,7 +105,7 @@ class AskEventWeekAction(Action):
 
         first_message = f"<br>Here are the events happening this week {start_of_week.date()} to {end_of_week.date()}:<br>"
 
-        # Prepare and dispatch the message for upcoming events
+        
         if upcoming_events_this_week:
             upcoming_message = "<br>Upcoming events this week:<br><br>"
             for event in upcoming_events_this_week:
@@ -116,7 +113,7 @@ class AskEventWeekAction(Action):
         else:
             upcoming_message = "<br>There are no upcoming events this week.<br>"
 
-        # Prepare and dispatch the message for past events
+        
         if past_events_this_week:
             past_message = "<br>Past events this week:<br><br>"
             for event in past_events_this_week:
@@ -126,13 +123,13 @@ class AskEventWeekAction(Action):
         
         conclude_message = "<br>Feel free to ask a follow up question about a specific event!"
 
-        # Dispatch the combined message
+        
         dispatcher.utter_message(first_message + upcoming_message + past_message + conclude_message)
 
-        session.close()
+        
             
             
-"""class TellMeMoreEventAction(Action):
+class TellMeMoreEventAction(Action):
     def name(self):
         return "action_tell_me_more_about_event"
 
@@ -167,94 +164,62 @@ class AskEventWeekAction(Action):
         else:
             dispatcher.utter_message("Please ask in the format: 'Tell me more about the event [name]'")
 
-import spacy
 
-# Load the spaCy model
-nlp = spacy.load('en_core_web_md') 
+
+
+
+
+
+
+
+
+# List of common stop words to be removed
+stop_words = {'and', 'or', 'but', 'the', 'is', 'at', 'which', 'on', 'for', 'by', 'from', 'up', 'to', 'with', 'a', 'an', 'in', 'of', 'it'}
+
+# Function to clean and split text into words, removing punctuation and stop words
+def clean_and_split(text):
+    words = set(re.sub(r'[^\w\s]', '', text).lower().split())
+    return words - stop_words
 
 class AskSpecificKindEvent(Action):
     def name(self):
         return "action_ask_specific_kind_of_event"
 
     def run(self, dispatcher, tracker, domain):
-        user_message = tracker.latest_message.get('text').lower()
+        user_message = tracker.latest_message.get('text')
         match = re.search(".* related to: (.+)", user_message)
         if match:
-            queried_name = match.group(1)
-            queried_doc = nlp(queried_name)  # Process the user query with spaCy
+            queried_keywords = clean_and_split(match.group(1))
+            matched_events = []
 
             with Session() as session:
-                # Query for all event descriptions
                 events = session.query(CurrentEvents).all()
 
-                # Initialize variables to track the best match
-                best_match = None
-                highest_score = 0
-
-                # Compute similarity for each event description
                 for event in events:
-                    event_doc = nlp(event.description)
-                    score = queried_doc.similarity(event_doc)
-                    if score > highest_score:
-                        highest_score = score
-                        best_match = event
+                    event_keywords = clean_and_split(event.description + ' ' + event.name)
+                    # Check if all queried keywords are in the event keywords
+                    if queried_keywords.issubset(event_keywords):
+                        matched_events.append(event)
 
-                # Respond based on the best match found
-                if best_match and highest_score > 0.3:  # Adjust the threshold as needed
-                    # Format the response message
-                    message = f"Here is information about the event <a href='{best_match.url}'>{best_match.name}</a><br>"
-                    message += f"<br>Description: {best_match.description}<br>"
-                    message += f"<br>Hosted by: {best_match.host}<br>"
-                    message += f"<br>This event will be located at: {best_match.location}<br>"
+                if matched_events:
+                    message = "<br>Here are the events related to your query:<br>"
+                    for event in matched_events:
+                        message += f"<a href='{event.url}'>{event.name}</a><br>"
+                        formatted_start_time = event.start.strftime('%Y-%m-%d %I:%M %p')
+                        message += f"Starts {formatted_start_time}<br>"
+                        message += f"Description: {event.description}<br><br>"
                     dispatcher.utter_message(message)
                 else:
                     dispatcher.utter_message("Sorry, I couldn't find any related event.")
         else:
             dispatcher.utter_message("Please ask in the format: 'Is there any upcoming event related to: [various descriptions or names]'")
 
-        session.close()"""
+        
 
-class AskSpecificKindEvent(Action):
-    def name(self):
-        return "action_ask_specific_kind_of_event"
-
-    def run(self, dispatcher, tracker, domain):
-        # Must be in the form: "Is there any upcoming event related to: [various descriptions or names]"
-        user_message = tracker.latest_message.get('text').lower()
-        match = re.search(".* related to: (.+)", user_message)
-        if match:
-            queried_name = match.group(1)
-            # Open database session
-            with Session() as session:
-                # Query for all location names
-                descriptions = session.query(CurrentEvents.description).all()  
-                descriptions = [d[0] for d in descriptions]  # flatten
-
-                # Find the closest match
-                MIN_MATCH_SCORE = 55  # You can adjust this value
-
-                closest_match, score = process.extractOne(queried_name, descriptions)
-                if score < MIN_MATCH_SCORE:
-                    dispatcher.utter_message("Sorry, I couldn't find any related event.")
-                    return
-
-                # Query for the matched location's details
-                event = session.query(CurrentEvents).filter_by(description=closest_match).first()
-
-                if event:
-                    # Send the location details to the user
-                    message = f"Here is information about the event <a href='{event.url}'>{event.name}</a><br>"
-                    message += f"<br>Description: {event.description}<br>"
-                    message += f"<br>Hosted by: {event.host}<br>"
-                    message += f"<br>This event will be located at: {event.location}<br>"
-                    dispatcher.utter_message(message)
-                else:
-                    # Handle no match found
-                    dispatcher.utter_message("Sorry, I couldn't find any related event.")
-        else:
-            dispatcher.utter_message("Please ask in the format: 'Is there any upcoming event related to: [various descriptions or names]'")
+       
 
 
+        
 class TestEventsAction(Action):
     def name(self):
         return "action_test_events"
