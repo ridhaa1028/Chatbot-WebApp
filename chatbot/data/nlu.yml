@@ -310,3 +310,41 @@ nlu:
     - Is there any upcoming event related to: Religion and Spirituality
     - Is there any upcoming event related to: Programming
     - Is there any upcoming event related to: Business
+
+- intent: ask_how_to_use_scheduler
+  examples: |
+    - Can you tell me how to use the scheduler?
+    - Can you tell me how to use the scheduler functionality?
+    - Give Instructions on how to use scheduler
+    - Give Instructions on how to use scheduler please
+    - How do I get a schedule for my classes?
+    - I would like to create a schedule
+    - How can I create a schedule?
+    - How can I create a schedule for my classes?
+
+- intent: ask_to_create_schedule
+  examples: |
+    - CS07450 CS07455 ARAB 12101 CS 07340 CS07321, 3, Minimize Days
+    - CS 07450 CS07455 ARAB12101 CS07340 CS07321, 60
+    - CS07450 CS 07455 ARAB12101 CS07340 CS07321, 100, Minimize Both
+    - CS07450 CS07455 ARAB12101 CS07340 CS07321, All, Minimize Gap
+    - EDUC 01605 CASE90541 PSY03824 ECE09573 MUS10506, 1, Minimize Days
+    - THD07532 PHYS02572 ENGR01512 ENST94501 MATH03512, 33
+    - EDUC01605 CS07455 CS07340 CS07455 MATH01529, 1, Minimize Days
+    - CS 07450 HIST 05581 ARAB 12101 MATH 01533 CS 07321, 25, Minimize Days
+    - CS07450 CS07455 ARAB 12101 ENGR01598 CS07321, 17, Minimize Days
+    - CS 07450 GEOG16670 ARAB12101 EVSC05660 CS07321, 25, Minimize Days
+    - CS07450 EDPA 02514 ARAB 12101 EVSC 05630 PLAN31589, All
+    - CS07321 BLED40520 MAPR01560 CS07340 EM0 12511, 20, Minimize Days
+    - CS07450 CS07455 ARAB 12101 CS 07340 CS07321, 3, Minimize Both
+    - CS 07450 CS07455 ARAB12101 CS07340 CS07321, 60
+    - CS07450 CS 07455 ARAB12101 CS07340 CS07321, 100, Minimize Gap
+    - CS07450 CS07455 ARAB12101 CS07340 CS07321, All, Minimize Gap
+    - EDUC 01605 CASE90541 PSY03824 ECE09573 MUS10506, 1, Minimize Days
+    - THD07532 PHYS02572 ENGR01512 ENST94501 MATH03512, 33
+    - EDUC 01605 CS 07455 CS 07340 CS 07455 MATH 01529, All
+    - CS 07450 HIST 05581 ARAB 12101 MATH 01533 CS 07321, 25, Minimize Days
+    - CS07450 CS07455 ARAB 12101 ENGR01598 CS07321, 17, Minimize Days
+    - CS 07450 GEOG16670 ARAB12101 EVSC05660 CS07321, 25, Minimize Gap
+    - CS07450 EDPA 02514 ARAB 12101 EVSC 05630 PLAN31589, All, Minimize Days
+    - CS07321 BLED40520 MAPR01560 CS07340 EM0 12511, 20, Minimize Days

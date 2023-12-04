@@ -23,6 +23,8 @@ intents:
   - ask_events_week
   - tell_me_more_about_event
   - ask_specific_kind_of_event
+  - ask_how_to_use_scheduler
+  - ask_to_create_schedule
 entities:
   - title
   - professor
@@ -49,6 +51,8 @@ actions:
   - action_ask_events_week
   - action_tell_me_more_about_event
   - action_ask_specific_kind_of_event
+  - action_ask_how_to_use_scheduler
+  - action_ask_to_create_schedule
 responses:
   utter_greet:
     - text: Hi, Welcome to ProfBot, your personal Rowan University assistant! How can I help?

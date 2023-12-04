@@ -112,5 +112,12 @@ rules:
     - intent: ask_specific_kind_of_event
     - action: action_ask_specific_kind_of_event
 
-  
+- rule: User asks how to use scheduler 
+  steps:
+    - intent: ask_how_to_use_scheduler
+    - action: action_ask_how_to_use_scheduler
 
+- rule: User asks to create scheduler 
+  steps:
+    - intent: ask_to_create_schedule
+    - action: action_ask_to_create_schedule
