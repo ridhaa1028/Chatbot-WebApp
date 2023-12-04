@@ -2,13 +2,12 @@
 # Returns Schedule with minimum number of days (Least amount of days to come to school)
 from ortools.sat.python import cp_model
 class CoursesSolutionPrinter(cp_model.CpSolverSolutionCallback):
-    def __init__(self, selection, all_courses, all_crns, limit=0):
+    def __init__(self, selection, all_courses, all_crns):
         cp_model.CpSolverSolutionCallback.__init__(self)
         self._selection = selection
         self._all_courses = all_courses
         self._all_crns = all_crns
         self._solution_count = 0
-        self._solution_limit = limit
         self._solutions = []
 
     def on_solution_callback(self):
@@ -21,10 +20,6 @@ class CoursesSolutionPrinter(cp_model.CpSolverSolutionCallback):
                     current_solution.append(crn)
         
         self._solutions.append(current_solution)
-
-        if self._solution_limit and self._solution_count >= self._solution_limit:
-            # print(f"Stop search after {self._solution_limit} solutions")
-            self.StopSearch()
 
     def solution_count(self):
         return self._solution_count
@@ -56,7 +51,7 @@ def conflict_between_slots(time1, time2):
     s2, e2 = time2    
     return not (s1 > e2 or s2 > e1)
 ######################################################################################################################################################
-def do_solve(input_to_algo, limit):
+def do_solve(input_to_algo):
     for i in range(len(input_to_algo)):
         all = []
         for string in input_to_algo[i][2]:
@@ -191,15 +186,8 @@ def do_solve(input_to_algo, limit):
     enum_solver = cp_model.CpSolver()
     enum_solver.parameters.enumerate_all_solutions = True
 
-    total_possibles = 1
-    for course in course_to_crns:
-        total_possibles *= len(course_to_crns[course]) 
-
-    if total_possibles > limit:
-        total_possibles = limit
-
     # Attach the solution printer to the new solver
-    enum_solution_printer = CoursesSolutionPrinter(selection, all_courses, all_crns, limit=total_possibles)
+    enum_solution_printer = CoursesSolutionPrinter(selection, all_courses, all_crns)
 
     # Solve the new model
     enum_solver.SearchForAllSolutions(enum_model, enum_solution_printer)

@@ -9,7 +9,27 @@ class AskAboutSchedulerAction(Action):
         return "action_ask_how_to_use_scheduler"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Show the schedules...")
+        message = (
+            "Absolutely!<br>"
+            "📅 *Scheduler Usage Instructions* 📅<br><br>"
+            "The scheduler is a very useful tool that will allow you to see all possible schedules you can take for the Spring 2024 semester.<br>" 
+            "All you need to know beforehand is the courses you need to take and their respective Subject and Course Numbers.<br>" 
+            "You will need to provide the courses followed by a comma and then a number indicating the max number of schedules you want to see.<br>"
+            "If you want to see all possible schedules, provide \"All\" instead of a number.<br>"
+            "Optionally, followed by another comma, you can also provide an additional constraint. We offer 3 constraints: Minimize Days, Minimize Gap, and Minimize both.<br><br>"
+            "Do you want to reduce the number of days you have to be in school? Use Minimize Days!<br><br>"
+            "Ever had a long, boring 3 hour break between classes with nothing to do? Well, worry no more! By providing “Minimize Gap” you will<br>" 
+            "get the schedules that reduce the chances of that happening with the least amount of wait time between classes on the same day.<br><br>"
+            "\"Minimize Both\" will get schedules with the minimum days and then show the ones with the smallest gap.<br><br>"
+            "So a message will look like: Courses, Number of Schedules [, Optional Constraint]<br><br>"
+            "Here are a few examples of messages to demonstrate this. Pay specical attention to the use of commas!<br>"
+            "- ACC03500 CS04400 ARAB12102 MATH01330 PHIL09213, 3, Minimize Days<br>"
+            "- ACC 03500 CS 04400 ARAB 12102 MATH 01330 PHIL 09213, 12<br>"
+            "- ACC03500 CS04400 ARAB12102 MATH01330 PHIL09213, 1, Minimize Both<br>"
+            "- CS 04321 CS 04380 DS	02395 HIST 05150, All, Minimize Gap<br><br>"
+            "Feel free to check out the User Guide for more details!"
+        )
+        dispatcher.utter_message(message)
 
 
 
@@ -65,7 +85,7 @@ class CreateScheduleAction(Action):
             schedules_data = response.json().get('schedules', [])
             if schedules_data:
             # Format and send the schedules to the user
-                message = "Found Schedules<br>"
+                message = "Found the following Schedules for Spring 2024:<br><br>"
                 for schedule in schedules_data:
                     for course in schedule:
                         message += f"{course['title']} with {course['prof']} with Timing {course['timing']} [CRN={course['crn']}]<br>" + " "
@@ -88,9 +108,6 @@ class CreateScheduleAction(Action):
             # Handle other errors
             dispatcher.utter_message("Sorry, there was a problem generating the schedule.")
 
-# for course in schedule
-#message += f"- {course['title']} (CRN: {course['crn']}) with {course['prof']}, {course['timing']}<br>"
-
 def is_string_number(s):
     try:
         int(s)  # Try converting to an integer
@@ -109,49 +126,3 @@ def extract_from_user(string):
     # match all, space between subject and number is optional
     # list of (subj, number) string tuples
     return re.findall(r'([a-z]{2,5})\s?(L[0-9]{4}|[0-9]{2,5})', string, re.I)
-
-
-# Below is how I tested that user message extraction was working correctly
-"""class CreateScheduleAction(Action):
-    def name(self):
-        return "action_ask_to_create_schedule"
-
-    def run(self, dispatcher, tracker, domain):
-        user_message = tracker.latest_message.get('text').upper()
-        message_values = user_message.split(',')
-        if len(message_values) == 3:
-            course_string, user_limit, constraint = message_values
-        # Did not provide a specific constraint
-        elif len(message_values) == 2:
-            course_string, user_limit = message_values
-            constraint = None
-        else:
-            dispatcher.utter_message("Formatting Fix Message.................")
-            return
-        
-        # Handling inputted limit
-        if 'ALL' in user_limit:
-            user_limit = -1
-        elif is_string_number(user_limit):
-            user_limit = int(user_limit)
-        else:
-            dispatcher.utter_message("Formatting Fix Message.................")
-            return
-        
-        # 0 if no constraint, 1 min days, 2 min gap, 3 both min days and gap
-        flag = 0
-        if constraint:
-            if 'DAYS' in constraint:
-                flag = 1
-            elif 'GAP' in constraint:
-                flag = 2
-            else:
-                flag = 3
-
-        course_list = extract_from_user(course_string)
-        formatted_courses = ", ".join([f"{subj}-{crse}" for subj, crse in course_list])
-        message1 = f"Your courses are {formatted_courses}<br><br><br>"
-        message2 = f"Your limit set is {user_limit}<br><br><br>"
-        message3 = f"Condition is represented by flags: {flag}<br><br><br>"
-        
-        dispatcher.utter_message(message1 + message2 + message3)"""

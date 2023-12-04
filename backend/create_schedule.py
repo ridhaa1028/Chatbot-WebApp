@@ -36,7 +36,8 @@ class ScheduleCreationResource(Resource):
         limit = args.get('limit') 
         constraint = args.get('constraint')  
 
-        if limit == -1: limit = float('inf')
+        if limit == -1: 
+            limit = float('inf')
 
         # Create a new session for this request
         session = self.Session()
@@ -63,16 +64,18 @@ class ScheduleCreationResource(Resource):
 
 
             if constraint == 0:
-                schedules = do_solve0(input_to_algo, limit)  # Solve the CSP
+                schedules = do_solve0(input_to_algo)  # Solve the CSP
             elif constraint == 1:
-                schedules = do_solve1(input_to_algo, limit)  
+                schedules = do_solve1(input_to_algo)  
             elif constraint == 2:
-                schedules = do_solve2(input_to_algo, limit) 
+                schedules = do_solve2(input_to_algo) 
             else:
-                schedules = do_solve3(input_to_algo, limit)  
+                schedules = do_solve3(input_to_algo)  
 
-            # Extra check to ensure limit is met
+            # Was a weird bug with limits in CSP Solver. Doing Manually now. Efficiency should be same.
+            print("len before", len(schedules))
             if limit and len(schedules) > limit:
+                print(limit)
                 schedules = schedules[:limit]
 
             # Fetch course details and serialize
