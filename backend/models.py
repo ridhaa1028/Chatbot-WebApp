@@ -18,6 +18,19 @@ class SectionTally(CourseBase):
     day_beg_end_bldgroom_type = Column(String(255))
     hrs = Column(Integer, nullable=False)
     avail = Column(Integer)
+    
+    def serialize(self):
+        return {
+            'crn': self.crn,
+            'subj': self.subj,
+            'crse': self.crse,
+            'sect': self.sect,
+            'title': self.title,
+            'prof': self.prof,
+            'timing': self.day_beg_end_bldgroom_type,
+            'hrs': self.hrs,
+            'available': self.avail
+        }
 
     def __repr__(self):
         return f'<Course {self.crn}>'

@@ -67,6 +67,7 @@ from .data_by_column import DataByColumnResource  # Update with your actual impo
 from .catalog_data_by_column import CourseDataByColumnResource
 from .events_data_by_column import EventsDataByColumnResource
 from .infrastructure_data_by_column import InfrastructureDataByColumnResource
+from .create_schedule import ScheduleCreationResource
 
 api = Api(app)
 api.add_resource(AllDataResource, '/all_data', resource_class_kwargs={'Session': Session})
@@ -74,6 +75,7 @@ api.add_resource(DataByColumnResource, '/data_by_column', resource_class_kwargs=
 api.add_resource(CourseDataByColumnResource, '/catalog_data_by_column', resource_class_kwargs={'Session': Session})
 api.add_resource(EventsDataByColumnResource, '/events_data_by_column', resource_class_kwargs={'Session': EventsSession})
 api.add_resource(InfrastructureDataByColumnResource, '/infrastructure_data_by_column', resource_class_kwargs={'Session': InfrastructureSession})
+api.add_resource(ScheduleCreationResource, '/create_schedule', resource_class_kwargs={'Session': Session})
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -90,6 +92,3 @@ def home():
 def account():
     if current_user.is_authenticated:
         return render_template('account.html')
-
-
-

@@ -8,3 +8,4 @@ flask_cors
 flask_login
 flask_jwt_extended
 fuzzywuzzy
+ortools
