@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css"> <!-- Your custom CSS file -->
+    <title>Create Account/Login</title>
+</head>
+
+<body>
+    <section class="login">
+        <div class="login_box">
+            <div class="left">
+                <div class="contact">
+                    <form id="loginForm" action="http://localhost:5000/auth/login" method="post">
+                        <h3>SIGN IN</h3>
+                        <input type="text" name="username" placeholder="USERNAME" required>
+                        <input type="password" name="password" placeholder="PASSWORD" required>
+                        <button type="submit" class="submit">Log In</button>
+                        <div class="additional-options">
+                            <a href="#" class="create-account" onclick="showRegister()">Create Account</a>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                    </form>
+
+                    <form id="registerForm" action="http://localhost:5000/auth/register" method="post"
+                        style="display: none;">
+                        <h3>CREATE ACCOUNT</h3>
+                        <input type="text" name="username" placeholder="USERNAME" required>
+                        <input type="email" name="email" placeholder="EMAIL" required>
+                        <input type="password" name="password" placeholder="PASSWORD" required>
+                        <button type="submit" class="submit">Create Account</button>
+                        <div class="additional-options">
+                            <a href="#" class="create-account" onclick="showLogin()">Already have an account?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-inductor"><img src="rowan.png" alt="" class="center"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showRegister() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+        }
+
+        function showLogin() {
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

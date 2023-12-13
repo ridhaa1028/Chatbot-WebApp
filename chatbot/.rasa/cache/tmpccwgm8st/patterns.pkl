@@ -1,0 +1,10 @@
+[
+  {
+    "name": "course_name",
+    "pattern": "[A-Z][A-Z0-9\\s]*"
+  },
+  {
+    "name": "professor",
+    "pattern": "[A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*"
+  }
+]

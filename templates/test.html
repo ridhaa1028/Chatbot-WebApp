@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login - Prof Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .w3-sidebar {
+            background: gold;
+            font-weight: bold;
+        }
+
+        .w3-sidebar a {
+            color: black;
+        }
+
+        .login-container {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin-left: 300px;
+            /* Adjusted to match the width of the sidebar */
+        }
+
+        .login-box {
+            background-color: #fff;
+            border-radius: 0px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            /* Increased padding for a larger window */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #57150B;
+            /* Brown color */
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        button {
+            padding: 15px;
+            /* Same size for all buttons */
+            width: 100%;
+            /* Full width */
+            margin-bottom: 10px;
+            background-color: #57150B;
+            /* Brown color */
+            color: #fff;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        button:hover {
+            background-color: gold;
+            /* Gold color */
+        }
+
+        #registration-message {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Style success message */
+        #registration-message.success {
+            color: green;
+        }
+
+        /* Style error message */
+        #registration-message.error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;">
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="http://localhost:5000/home" onclick="w3_close()"
+                class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#showcase" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+        </div>
+    </nav>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="login-container">
+        <div class="login-box">
+            <h2 id="form-title">Login to Prof Bot</h2>
+            <form id="login-form" action="http://localhost:5000/auth/login" method="post">
+                <!-- Ensure the form method is set to POST and action is set to the login route -->
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+                <button type="button" id="create-account-btn" onclick="toggleForm('create-account')">Create an Account</button>
+                <button type="button" onclick="toggleForm('forgot-password')">Forgot My Password</button>
+            </form>
+
+            <!-- New form for "Forgot My Password" section -->
+            <form id="forgot-password-form" style="display: none;" action="http://localhost:5000/auth/password_reset_request"
+                method="post">
+                <label for="email-reset">Enter your email:</label>
+                <input type="email" id="email-reset" name="email-reset" required>
+                <button type="submit">Request Reset Code</button>
+                <button type="button" onclick="toggleForm('login')">Back to Login</button>
+            </form>
+
+            <form id="create-account-form" style="display: none;" action="http://localhost:5000/auth/register" method="post">
+                <!-- Ensure the form method is set to POST and action is set to the register route -->
+
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="new-username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+
+                <button type="submit" class="secondary">Register</button>
+                <button type="button" class="secondary" onclick="toggleForm()">Back to Login</button>
+                <!-- Use a secondary class to style the "Back to Login" button differently -->
+            </form>
+
+            <form id="enter-new-password-form" style="display: none;" action="http://localhost:5000/auth/password_reset_verify"
+                method="post">
+                <label for="new-password-reset">New Password:</label>
+                <input type="password" id="new-password-reset" name="new-password-reset" required>
+            
+                <!-- Include hidden fields for email and reset code -->
+                <label for="reset-code">Reset Code:</label>
+                <input type="text" id="reset-code" name="reset-code" required>
+            
+                <!-- Add an email input field -->
+                <label for="email-reset">Email:</label>
+                <input type="email" id="email-reset" name="email-reset" required>
+            
+                <button type="submit">Submit</button>
+                <button type="button" onclick="toggleForm('login')">Return to Login</button>
+            </form>
+
+
+
+            <!-- Registration message -->
+            <div id="registration-message"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+                const loginForm = document.getElementById("login-form");
+                const createAccountForm = document.getElementById("create-account-form");
+                const forgotPasswordForm = document.getElementById("forgot-password-form");
+                const enterNewPasswordForm = document.getElementById("enter-new-password-form");
+                const formTitle = document.getElementById("form-title");
+                const createAccountBtn = document.getElementById("create-account-btn");
+
+                // Hide all forms
+                loginForm.style.display = "none";
+                createAccountForm.style.display = "none";
+                forgotPasswordForm.style.display = "none";
+                enterNewPasswordForm.style.display = "none";
+
+                if (formType === 'forgot-password') {
+                    // Switch to "Forgot My Password" mode
+                    formTitle.innerText = "Forgot My Password";
+                    forgotPasswordForm.style.display = "block";
+                } else if (formType === 'create-account') {
+                    // Switch to create account mode
+                    formTitle.innerText = "Create an Account";
+                    createAccountForm.style.display = "block";
+                } else if (formType === 'enter-new-password') {
+                    // Switch to enter new password mode
+                    formTitle.innerText = "Enter New Password";
+                    enterNewPasswordForm.style.display = "block";
+                } else {
+                    // Switch to login mode (default)
+                    formTitle.innerText = "Login to Prof Bot";
+                    loginForm.style.display = "block";
+                }
+            }
+
+        // Function to display registration message
+        function displayRegistrationMessage(success, message) {
+                const registrationMessage = document.getElementById("registration-message");
+
+                // Clear previous messages and apply new class based on success
+                registrationMessage.innerHTML = message;
+                registrationMessage.classList.remove("success", "error");
+                registrationMessage.classList.add(success ? "success" : "error");
+
+                // If registration was successful, switch to the login form
+                if (success) {
+                    toggleForm();
+                }
+            }
+
+            // Handle the registration form submission
+            document.getElementById("create-account-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const form = event.target;
+
+                // Use the traditional form submission
+                fetch(form.action, {
+                    method: form.method,
+                    body: new URLSearchParams(new FormData(form)),
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => displayRegistrationMessage(data.success, data.message))
+                    .catch(error => {
+                        console.error("Error during registration:", error);
+                        displayRegistrationMessage(false, "An error occurred during registration.");
+                    });
+            });
+
+            document.getElementById("forgot-password-form").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    const form = event.target;
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: JSON.stringify({
+                                email: form.elements["email-reset"].value,
+                            }),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        });
+
+                        if (response.ok) {
+                            const responseData = await response.json();
+
+                            if (responseData.message === 'Password reset email sent successfully') {
+                                // If the email is sent successfully, switch to "Enter New Password" form
+                                document.getElementById("email-reset").value = form.elements["email-reset"].value;
+                                toggleForm('enter-new-password');
+                            } else {
+                                // Display the regular message
+                                displayRegistrationMessage(responseData.success, responseData.message);
+                            }
+                        } else {
+                            const errorMessage = await response.json();
+                            console.error("Error during password reset request:", errorMessage);
+                            displayRegistrationMessage(false, "An error occurred during password reset request.");
+                        }
+                    } catch (error) {
+                        console.error("Error during password reset request:", error);
+                        displayRegistrationMessage(false, "An error occurred during password reset request.");
+                    }
+                });
+
+            document.getElementById("enter-new-password-form").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    const form = event.target;
+
+                    try {
+                        const email = form.elements["email-reset"].value;
+                        const new_password = form.elements["new-password-reset"].value;
+                        const reset_code = form.elements["reset-code"].value; // Add this line to get the reset code
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: JSON.stringify({
+                                email: email,
+                                new_password: new_password,
+                                reset_code: reset_code
+                            }),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        });
+
+                        if (response.ok) {
+                            const responseData = await response.json();
+                            displayRegistrationMessage(responseData.message);
+                        } else {
+                            const errorMessage = await response.json();
+                            console.error("Error during password reset verification:", errorMessage);
+                            displayRegistrationMessage(false, "An error occurred during password reset verification.");
+                        }
+                    } catch (error) {
+                        console.error("Error during password reset verification:", error);
+                        displayRegistrationMessage(false, "An error occurred during password reset verification.");
+                    }
+                });
+        
+        
+    </script>
+</body>
+
+</html>

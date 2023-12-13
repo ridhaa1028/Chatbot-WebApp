@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .w3-sidebar {
+            background: gold;
+            font-weight: bold;
+        }
+
+        .w3-sidebar a {
+            color: black;
+        }
+
+        .user-info-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .chatbot-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chat-box {
+            max-height: 80vh;
+            /* Set max height to the viewport height */
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .user-message,
+        .bot-message {
+            max-width: 100%;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 0px;
+        }
+
+        .user-message {
+            background-color: gold;
+            color: #57150B;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #57150B;
+            color: #fff;
+        }
+
+        .clear-chat-button {
+            padding: 10px 15px;
+            background-color: #57150B;
+            color: #fff;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+            margin-top: 10px;
+        }
+
+        .clear-chat-button:hover {
+            background-color: gold;
+        }
+
+        /* Style for the modal */
+        .modal {
+            display: none;
+            position: relative;
+            z-index: 2; /* Increase the z-index to ensure it's above other elements */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Style for the modal content */
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Adjust the width as needed */
+            max-width: 600px; /* Set a maximum width to avoid it becoming too wide */
+            margin: 10% auto;
+        }
+
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+        id="mySidebar">
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="http://localhost:5000/account" onclick="w3_close()"
+                class="w3-bar-item w3-button w3-hover-white">Your
+                Account</a>
+            <a href="http://localhost:5000/home" onclick="w3_close()"
+                class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Prof Bot</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <!-- Your existing content -->
+
+        <div class="w3-container w3-card w3-white user-info-box">
+            <div class="user-info-container">
+                <h2>Your Account</h2>
+                <div id="user-info">
+                    <!-- User information will be displayed here dynamically -->
+                </div>
+                <button class="w3-button w3-black" onclick="openChangePasswordModal()">Change Password</button>
+            </div>
+        </div>
+
+        <!-- Change Password Modal -->
+        <div id="changePasswordModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeChangePasswordModal()">&times;</span>
+                <h2>Change Password</h2>
+                <label for="currentPassword">Current Password:</label>
+                <input type="password" id="currentPassword" name="currentPassword" required><br>
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required><br>
+                <button onclick="submitChangePassword()">Submit</button>
+                <button onclick="closeChangePasswordModal()">Cancel</button>
+                <p id="changePasswordMessage"></p>
+            </div>
+        </div>
+
+        <div class="w3-container w3-card w3-white chatbot-box">
+            <div class="chat-container">
+                <h2>Past Conversations</h2>
+                <div class="chat-box" id="chat-box">
+                    <!-- Chatbot messages will be displayed here dynamically -->
+                </div>
+                <button class="clear-chat-button" onclick="clearChatHistory()">Clear Chat History</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the Change Password modal
+        function openChangePasswordModal() {
+            document.getElementById('changePasswordModal').style.display = 'block';
+        }
+
+        // Function to close the Change Password modal
+        function closeChangePasswordModal() {
+            document.getElementById('changePasswordModal').style.display = 'none';
+        }
+
+        // Function to submit the Change Password request
+        function submitChangePassword() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Make a POST request to change the password
+            fetch('/auth/change_password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    current_password: currentPassword,
+                    new_password: newPassword,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the message in the modal
+                    document.getElementById('changePasswordMessage').innerText = data.message;
+                })
+                .catch(error => console.error('Error changing password:', error));
+        }
+    </script>
+
+    <script>
+        // Function to clear chat history
+            function clearChatHistory() {
+                // Make a DELETE request to clear chat history
+                fetch('/auth/delete_all_conversations', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear the chat box content
+                        const chatBox = document.getElementById('chat-box');
+                        chatBox.innerHTML = '';
+
+                        // Optionally, you can display a message or perform any other actions
+                        console.log(data.message);
+                    })
+                    .catch(error => console.error('Error clearing chat history:', error));
+            }
+        
+        // Fetch user information when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/auth/api/current_user')
+                .then(response => response.json())
+                .then(user => {
+                    const userInfoContainer = document.getElementById('user-info');
+                    userInfoContainer.innerHTML = `<p><strong>Username:</strong> ${user.username}</p><p><strong>Email:</strong> ${user.email}</p>`;
+                })
+                .catch(error => console.error('Error fetching user information:', error));
+        });
+
+        // Fetch past conversations when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+                fetch('/auth/get_conversations')
+                    .then(response => response.json())
+                    .then(data => {
+                        const chatBox = document.getElementById('chat-box');
+                        data.conversations.forEach(conversation => {
+                            const messageDiv = document.createElement('div');
+                            messageDiv.classList.add(conversation.is_user_message ? 'user-message' : 'bot-message');
+
+                            // Use innerHTML to interpret HTML content
+                            messageDiv.innerHTML = conversation.content;
+
+                            chatBox.appendChild(messageDiv);
+                        });
+                        chatBox.scrollTop = chatBox.scrollHeight;
+                    })
+                    .catch(error => console.error('Error fetching past conversations:', error));
+            });
+
+    </script>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

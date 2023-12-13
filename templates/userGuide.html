@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User Guide - Prof Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .w3-sidebar {
+            background: gold;
+            font-weight: bold;
+        }
+
+        .w3-sidebar a {
+            color: black;
+        }
+
+        .user-guide-container {
+            background-color: #f4f4f4;
+            border-radius: 0px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+        .user-guide-content {
+            width: 75%;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .dropdown-box {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .dropdown-btn {
+            padding: 20px;
+            background-color: #57150B;
+            color: #fff;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+            width: 100%;
+        }
+
+        .dropdown-btn:hover {
+            background-color: gold;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            background-color: #fff;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .dropdown-box.open .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+        id="mySidebar">
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="http://localhost:5000/account" onclick="w3_close()"
+                class="w3-bar-item w3-button w3-hover-white">Your Account</a>
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Prof Bot</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <!-- User Guide Container -->
+        <div class="user-guide-container">
+            <div class="user-guide-content">
+                <h2>User Guide</h2>
+                <p>Below you will find information and answers to questions you may have.</p>
+
+                <!-- Dropdown Boxes -->
+                <div class="dropdown-box">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">So what can this chatbot do?</button>
+                    <div class="dropdown-content">
+                        This chatbot is designed to answer any questions you might have regarding classes at Rowan University and any upcoming events.
+                        Our coolest feature is our schedule maker. It allows you to enter the course numbers you are interested in and it will make a schedule for you!
+                        You can also ask the chatbot to give you a description of a course, prerequisities for a course, and particular sections of a course. Lastly, it can 
+                        answer some questions pertaining to infrastrucutre, departments, and even upcoming events!
+                    </div>
+                </div>
+
+                <!-- Add more dropdown boxes as needed -->
+                <!-- Example: -->
+                <!-- <div class="dropdown-box">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">Question 2</button>
+                    <div class="dropdown-content">
+                        Answer to Question 2
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Toggle dropdown content
+        function toggleDropdown(btn) {
+            const box = btn.parentNode;
+            box.classList.toggle("open");
+        }
+
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

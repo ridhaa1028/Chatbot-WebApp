@@ -1,0 +1,352 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: get_all_classes
+  examples: |
+    - Show me all classes
+    - List all classes
+    - Get me the class information
+    - What classes are available?
+
+- intent: specify_class
+  examples: |
+    - Tell me about the course [Discrete Structures](title)
+    - I want information on [Principles of Finance](title)
+    - What can you tell me about [Calculus II](title)
+    - Give me details about [Foundations of Computer Science](title)
+    - Provide information on [Linear Algebra](title)
+    - Tell me everything about [Marketing 101](title)
+    - What do you know about [Principles of Finance](title)
+    - Describe [ORGANIZATIONAL BEHAVIOR](title)
+    - Explain [Statistics II](title) to me
+    - [Database Systems](title) details, please
+    - Can you give me the scoop on [Software Engineering I](title)
+    - I'd like to learn about [Accounting I](title)
+    - Share some insights on [ORGANIZATIONAL BEHAVIOR](title)
+    - What's the story with [Principles of Marketing](title)
+    - I'm interested in [Chemistry I](title)
+    - Tell me more about [Organic Chemistry](title)
+    - I need info on [Intro to Evolution](title)
+    - Tell me about the course [Principles of Nanoparticle Design and Engineering](title)
+    - What can you tell me about [Integrated Marketing Communication and New Media](title)
+    - I want information on [Cerebral Palsy: Its Individual And Community Problems](title)
+    - Tell me about the course [Issues in Business: Directed Research](title)
+    - I want information on [Nursing III: Management of Acute & Chronic Health Issues Across the Lifespan](title)
+    - Tell me about the course [Professional Applied Instrumental: Cello](title)
+    - I want information on [Clinical Practice I: Elementary Music](title)
+    - Tell me about the course [General Biology: Human Focus](title)
+    - What do you know about [Professions in Writing Arts: Post-Graduate Options](title)
+
+- intent: find_classes
+  examples: |
+    - Can you list the courses taught by [Myers, Jack F](professor)?
+    - Can you list the courses taught by [MYERS, JACK F](professor)?
+    - Can you list the courses taught by [myers, jack f](professor)?
+    - Can you list the courses taught by [Tinkham, Nancy](professor)?
+    - Can you list the courses taught by [TINKHAM, NANCY](professor)?
+    - Can you list the courses taught by [tinkham, nancy](professor)?
+    - Can you list the courses taught by [Constant, Frantz](professor)?
+    - Can you list the courses taught by [CONSTANT, FRANTZ](professor)?
+    - Can you list the courses taught by [constant, frantz](professor)?
+    - Can you list the courses taught by [Tetteh, Edem](professor)?
+    - Can you list the courses taught by [TETTEH, EDEM](professor)?
+    - Can you list the courses taught by [tetteh, edem](professor)?
+    - Can you list the courses taught by [Lesniewsicz, Stanley Walter](professor)?
+    - Can you list the courses taught by [LESNIEWSICZ, STANLEY WALTER](professor)?
+    - Can you list the courses taught by [lesniewsicz, stanley walter](professor)?
+    - Can you list the courses taught by [Jambro, John D](professor)?
+    - Can you list the courses taught by [JAMBRO, JOHN D](professor)?
+    - Can you list the courses taught by [jambro, john d](professor)?
+    - Can you list the courses taught by [Qu, Yuanmei](professor)?
+    - Can you list the courses taught by [QU, YUANMEI](professor)?
+    - Can you list the courses taught by [qu, yuanmei](professor)?
+    - Can you list the courses taught by [Yang, Yang](professor)?
+    - Can you list the courses taught by [YANG, YANG](professor)?
+    - Can you list the courses taught by [yang, yang](professor)?
+    - Can you list the courses taught by [Roh, James](professor)?
+    - Can you list the courses taught by [ROH, JAMES](professor)?
+    - Can you list the courses taught by [roh, james](professor)?
+    - Can you list the courses taught by [Stockton, Edward L](professor)?
+    - Can you list the courses taught by [STOCKTON, EDWARD L](professor)?
+    - Can you list the courses taught by [stockton, edward l](professor)?
+    - Can you list the courses taught by [Ehling, Ernest Henry](professor)?
+    - Can you list the courses taught by [EHLING, ERNEST HENRY](professor)?
+    - Can you list the courses taught by [ehling, ernest henry](professor)?
+    - Can you list the courses taught by [Stinchcombe, Fred](professor)?
+    - Can you list the courses taught by [STINCHCOMBE, FRED](professor)?
+    - Can you list the courses taught by [stinchcombe, fred](professor)?
+    - Can you list the courses taught by [Sledjeski, Eve M](professor)?
+    - Can you list the courses taught by [SLEDJESKI, EVE M](professor)?
+    - Can you list the courses taught by [sledjeski, eve m](professor)?
+    - Can you list the courses taught by [Bogart, Daniel Fred](professor)?
+    - Can you list the courses taught by [BOGART, DANIEL FRED](professor)?
+    - Can you list the courses taught by [bogart, daniel fred](professor)?
+    - Can you list the courses taught by [Herman, Marlena F](professor)?
+    - Can you list the courses taught by [HERMAN, MARLENA F](professor)?
+    - Can you list the courses taught by [herman, marlena f](professor)?
+    - Can you list the courses taught by [Hudson, Jaree](professor)?
+    - Can you list the courses taught by [HUDSON, JAREE](professor)?
+    - Can you list the courses taught by [hudson, jaree](professor)?
+    - Can you list the courses taught by [Wang, Qingjia Edward](professor)?
+    - Can you list the courses taught by [WANG, QINGJIA EDWARD](professor)?
+    - Can you list the courses taught by [wang, qingjia edward](professor)?
+    - Can you list the courses taught by [Dusk, Chie Matsumura](professor)?
+    - Can you list the courses taught by [DUSK, CHIE MATSUMURA](professor)?
+    - Can you list the courses taught by [dusk, chie matsumura](professor)?
+
+- regex: professor
+  examples: |
+    - [A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*
+- lookup: professor
+  examples: |
+    - Myers, Jack F
+    - Tinkham, Nancy
+    - Constant, Frantz
+    - Roh, James
+    - Stockton, Edward L
+    - Stinchcombe, Fred
+    - Sledjeski, Eve M
+    - Bogart, Daniel Fred
+    - Herman, Marlena F
+    - Hudson, Jaree
+    - Wang, Peng
+    - Valente, Lynne Marie
+    - Kaye, Melissa L
+    - Callueng, Carmelo Macarubbo
+    - Miller, Kathleen
+    - McFarland, Daniel J.
+    - Ehling, Ernest Henry
+    - Pierantozzi, Jeffrey C.
+    - Provine, Darren F. 
+    - Thorpe, Robert A
+    - Chakraborty, Dwaipayan
+    - Hristescu, Gabriela
+    - Bergmann, Seth
+    - Mousa, Tarek Awadalla
+    - Howell, Edward H
+    - Talley, Lee Allen
+
+- intent: description_class
+  examples: |
+    - Give me a description of the course [Discrete Structures](title)
+    - Give me a full description of [Principles of Finance](title)
+    - Give me a description of [Calculus II](title)
+    - Give me a full description of [Foundations of Computer Science](title)
+    - Give me a description of [Linear Algebra](title)
+    - Give me a full description of [Marketing 101](title)
+    - Give me a description of [Principles of Finance](title)
+    - Give me a description of [ORGANIZATIONAL BEHAVIOR](title)
+    - Give me a description of [Statistics II](title)
+    - Give me a full description of [Database Systems](title), please
+    - Give me a description of [Software Engineering I](title)
+    - Give me a description of [Accounting I](title)
+    - Give me a description of [ORGANIZATIONAL BEHAVIOR](title)
+    - Give me a description of [Principles of Marketing](title)
+    - Give me a description of [Chemistry I](title)
+    - Give me a full description of [Organic Chemistry](title)
+    - Give me a description of [Intro to Evolution](title)
+    - Give me a full description of the course [Principles of Nanoparticle Design and Engineering](title)
+    - Give me a description of [Integrated Marketing Communication and New Media](title)
+    - Give me a full description of [Cerebral Palsy: Its Individual And Community Problems](title)
+    - Give me a description of the course [Issues in Business: Directed Research](title)
+    - Give me a full description of the course [Nursing III: Management of Acute & Chronic Health Issues Across the Lifespan](title)
+    - Give me a description of the course [Professional Applied Instrumental: Cello](title)
+    - Give me a full description of the course [Clinical Practice I: Elementary Music](title)
+    - Give me a description of the course [General Biology: Human Focus](title)
+    - Give me a description of [Professions in Writing Arts: Post-Graduate Options](title)
+
+- lookup: title
+  examples: |
+    - CYBER SEC: FUND, PRIN AND APPS
+    - Object Oriented Programming And Data Abstraction
+    - ETHICS, LEADERSHIP, & ADVOC
+    - Advanced Learning Assistant Seminar in Computer Science
+    - Software Engineering I
+    - Software Engineering II
+    - An Introduction To Economics-A Macroeconomic Perspective
+    - Advanced Database Systems: Theory And Programming
+    - Introduction to Ethics - WI
+
+- intent: test_events
+  examples: |
+    - I want to test events
+    - Show me events
+    - Lets do events
+
+- intent: test_infrastructure
+  examples: |
+    - I want to test infrastructure
+    - Show me infrastructure
+    - Lets do infrastructure
+  
+- intent: what_tell_me_about_infrastructure
+  examples: |
+    - What can you tell me about the infrastructure of Rowan
+    - What are the different locations on campus
+    - What can you tell me about the locations on campus
+    - What can you tell me about the buildings on campus
+    - Explain locations
+    - Tell me about the locations
+    
+- intent: ask_for_location
+  examples: |
+    - Where is 230 Victoria located?
+    - Where is 301 West High Street located?
+    - Where is 6 High Street located?
+    - Where is Whitney Center located?
+    - Where is Lot F-1 located?
+    - Where is Lot A-1 located?
+    - Where is Rowan Boulevard Garage located?
+    - Where is Baseball Field located?
+    - Where is Esbjornson Gym located?
+    - Where is Shuttle Stop Main Campus 1 located?
+    - Where is Memorial Hall Restrooms located?
+    - Where is the Department of Nursing located?
+    - Where is Department of Theatre and Dance located?
+    - Where is the Department of Political Science and Economics located?
+    - Where is Department of Computer Science located?
+
+- intent: tell_me_more_about_location
+  examples: |
+    - Tell me more about the place location a
+    - Give me more details about the place location b
+    - What can you tell me about the place location c
+    - Tell me more about the place 230 Victoria
+    - Tell me more about the place Rowan Boulevard Garage
+    - Tell me more about the place Esbjornson Gym
+    - Tell me more about the place Department of Nursing
+    
+- intent: ask_for_landmarks
+  examples: |
+    - What are all the landmarks on campus?
+    - Tell me about the landmarks on campus
+  
+- intent: ask_for_departments
+  examples: |
+    - What are all the departments on campus?
+    - Tell me about the departments on campus
+
+- intent: ask_for_bathrooms
+  examples: |
+    - What are all the bathrooms on campus?
+    - Tell me about the bathrooms on campus
+
+- intent: ask_for_parking
+  examples: |
+    - What are all the parking spots on campus?
+    - Tell me about the parking spots on campus
+    - What are all the parking spaces on campus?
+    - Tell me about the parking spaces on campus
+
+- intent: ask_for_residence
+  examples: |
+    - What are all the residence halls on campus?
+    - Tell me about the residence halls on campus
+  
+- intent: ask_for_academics
+  examples: |
+    - What are all the Academic Buildings on campus?
+    - Tell me about the Academic Buildings on campus
+
+- intent: ask_for_admin
+  examples: |
+    - What are all the Administrative Buildings on campus?
+    - Tell me about the Administrative Buildings on campus
+    - What are all the support Buildings on campus?
+    - Tell me about the support Buildings on campus
+  
+- intent: ask_events_right_now
+  examples: |
+    - Is there an event going on right now?
+    - What events are going on at this time?
+    - What events are happening right now?
+
+- intent: ask_events_tomorrow
+  examples: |
+    - Is there an event going on tomorrow?
+    - What events are going on tomorrow?
+    - What events are happening tomorrow?
+
+- intent: ask_events_week
+  examples: |
+    - Is there an event upcoming this week?
+    - What events are going on in the coming week?
+    - What events will take place this week?
+
+- intent: tell_me_more_about_event
+  examples: |
+    - Tell me more about the event BEL Business Expo
+    - Give me more details about the event Yoga Flow
+    - What can you tell me about the event Transgender Day of Remembrance and Resiliency
+    - Tell me more about the event SGA Advancement Committee Meeting
+    - Tell me more about the event Rowan Chi Alpha Pie Fest
+    - Tell me more about the event BodyPump
+    - Tell me more about the event Pilates Fusion
+
+- intent: ask_specific_kind_of_event
+  examples: |
+    - Is there any upcoming event related to: Anime and Video Games
+    - Is there any upcoming event related to: Basketball
+    - Is there any upcoming event related to: Chess
+    - Is there any upcoming event related to: Dancing
+    - Is there any upcoming event related to: Books and reading
+    - Is there any upcoming event related to: Board Games
+    - Is there any upcoming event related to: Religion and Spirituality
+    - Is there any upcoming event related to: Programming
+    - Is there any upcoming event related to: Business
+
+- intent: ask_how_to_use_scheduler
+  examples: |
+    - Can you tell me how to use the scheduler?
+    - Can you tell me how to use the scheduler functionality?
+    - Give Instructions on how to use scheduler
+    - Give Instructions on how to use scheduler please
+    - How do I get a schedule for my classes?
+    - I would like to create a schedule
+    - How can I create a schedule?
+    - How can I create a schedule for my classes?
+
+- intent: ask_to_create_schedule
+  examples: |
+    - CS07450 CS07455 ARAB 12101 CS 07340 CS07321, 3, Minimize Days
+    - CS 07450 CS07455 ARAB12101 CS07340 CS07321, 60
+    - CS07450 CS 07455 ARAB12101 CS07340 CS07321, 100, Minimize Both
+    - CS07450 CS07455 ARAB12101 CS07340 CS07321, All, Minimize Gap
+    - EDUC 01605 CASE90541 PSY03824 ECE09573 MUS10506, 1, Minimize Days
+    - THD07532 PHYS02572 ENGR01512 ENST94501 MATH03512, 33
+    - EDUC01605 CS07455 CS07340 CS07455 MATH01529, 1, Minimize Days
+    - CS 07450 HIST 05581 ARAB 12101 MATH 01533 CS 07321, 25, Minimize Days
+    - CS07450 CS07455 ARAB 12101 ENGR01598 CS07321, 17, Minimize Days
+    - CS 07450 GEOG16670 ARAB12101 EVSC05660 CS07321, 25, Minimize Days
+    - CS07450 EDPA 02514 ARAB 12101 EVSC 05630 PLAN31589, All
+    - CS07321 BLED40520 MAPR01560 CS07340 EM0 12511, 20, Minimize Days
+    - CS07450 CS07455 ARAB 12101 CS 07340 CS07321, 3, Minimize Both
+    - CS 07450 CS07455 ARAB12101 CS07340 CS07321, 60
+    - CS07450 CS 07455 ARAB12101 CS07340 CS07321, 100, Minimize Gap
+    - CS07450 CS07455 ARAB12101 CS07340 CS07321, All, Minimize Gap
+    - EDUC 01605 CASE90541 PSY03824 ECE09573 MUS10506, 1, Minimize Days
+    - THD07532 PHYS02572 ENGR01512 ENST94501 MATH03512, 33
+    - EDUC 01605 CS 07455 CS 07340 CS 07455 MATH 01529, All
+    - CS 07450 HIST 05581 ARAB 12101 MATH 01533 CS 07321, 25, Minimize Days
+    - CS07450 CS07455 ARAB 12101 ENGR01598 CS07321, 17, Minimize Days
+    - CS 07450 GEOG16670 ARAB12101 EVSC05660 CS07321, 25, Minimize Gap
+    - CS07450 EDPA 02514 ARAB 12101 EVSC 05630 PLAN31589, All, Minimize Days
+    - CS07321 BLED40520 MAPR01560 CS07340 EM0 12511, 20, Minimize Days
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "professor",
+    "pattern": "[A-Za-z]+, [A-Za-z]+( [A-Za-z]+)*"
+  },
+  {
+    "name": "professor",
+    "pattern": "(\\bMyers,\\ Jack\\ F\\b|\\bTinkham,\\ Nancy\\b|\\bConstant,\\ Frantz\\b|\\bRoh,\\ James\\b|\\bStockton,\\ Edward\\ L\\b|\\bStinchcombe,\\ Fred\\b|\\bSledjeski,\\ Eve\\ M\\b|\\bBogart,\\ Daniel\\ Fred\\b|\\bHerman,\\ Marlena\\ F\\b|\\bHudson,\\ Jaree\\b|\\bWang,\\ Peng\\b|\\bValente,\\ Lynne\\ Marie\\b|\\bKaye,\\ Melissa\\ L\\b|\\bCallueng,\\ Carmelo\\ Macarubbo\\b|\\bMiller,\\ Kathleen\\b|\\bMcFarland,\\ Daniel\\ J\\.\\b|\\bEhling,\\ Ernest\\ Henry\\b|\\bPierantozzi,\\ Jeffrey\\ C\\.\\b|\\bProvine,\\ Darren\\ F\\.\\b|\\bThorpe,\\ Robert\\ A\\b|\\bChakraborty,\\ Dwaipayan\\b|\\bHristescu,\\ Gabriela\\b|\\bBergmann,\\ Seth\\b|\\bMousa,\\ Tarek\\ Awadalla\\b|\\bHowell,\\ Edward\\ H\\b|\\bTalley,\\ Lee\\ Allen\\b)"
+  },
+  {
+    "name": "title",
+    "pattern": "(\\bCYBER\\ SEC:\\ FUND,\\ PRIN\\ AND\\ APPS\\b|\\bObject\\ Oriented\\ Programming\\ And\\ Data\\ Abstraction\\b|\\bETHICS,\\ LEADERSHIP,\\ \\&\\ ADVOC\\b|\\bAdvanced\\ Learning\\ Assistant\\ Seminar\\ in\\ Computer\\ Science\\b|\\bSoftware\\ Engineering\\ I\\b|\\bSoftware\\ Engineering\\ II\\b|\\bAn\\ Introduction\\ To\\ Economics\\-A\\ Macroeconomic\\ Perspective\\b|\\bAdvanced\\ Database\\ Systems:\\ Theory\\ And\\ Programming\\b|\\bIntroduction\\ to\\ Ethics\\ \\-\\ WI\\b)"
+  }
+]

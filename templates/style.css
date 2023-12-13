@@ -1,0 +1,96 @@
+/* Add your CSS styles here */
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.w3-sidebar {
+    background: gold;
+    font-weight: bold;
+}
+
+.w3-sidebar a {
+    color: black;
+}
+
+.chat-container {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.chat-box {
+    max-height: 80vh;
+    /* Set max height to the viewport height */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.user-message,
+.bot-message {
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.user-message {
+    background-color: gold;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #57150B;
+    color: #fff;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    resize: none;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #57150B;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: gold;
+}

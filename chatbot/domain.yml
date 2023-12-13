@@ -1,0 +1,77 @@
+---
+version: "3.1"
+intents:
+  - greet
+  - specify_class
+  - get_all_classes
+  - find_classes
+  - description_class
+  - test_events
+  - test_infrastructure
+  - what_tell_me_about_infrastructure
+  - ask_for_location
+  - tell_me_more_about_location
+  - ask_for_landmarks
+  - ask_for_departments
+  - ask_for_bathrooms
+  - ask_for_parking
+  - ask_for_residence
+  - ask_for_academics
+  - ask_for_admin
+  - ask_events_right_now
+  - ask_events_tomorrow
+  - ask_events_week
+  - tell_me_more_about_event
+  - ask_specific_kind_of_event
+  - ask_how_to_use_scheduler
+  - ask_to_create_schedule
+entities:
+  - title
+  - professor
+actions:
+  - action_get_course_sections
+  - action_get_all_classes
+  - action_get_course_subjects
+  - action_get_professor_classes
+  - action_get_course_description
+  - action_test_events
+  - action_test_infrastructure
+  - action_what_tell_me_about_infrastructure
+  - action_ask_for_location
+  - action_tell_me_more_about_location
+  - action_ask_for_landmarks
+  - action_ask_for_departments
+  - action_ask_for_bathrooms
+  - action_ask_for_parking
+  - action_ask_for_residence
+  - action_ask_for_academics
+  - action_ask_for_admin
+  - action_ask_events_right_now
+  - action_ask_events_tomorrow
+  - action_ask_events_week
+  - action_tell_me_more_about_event
+  - action_ask_specific_kind_of_event
+  - action_ask_how_to_use_scheduler
+  - action_ask_to_create_schedule
+responses:
+  utter_greet:
+    - text: Hi, Welcome to ProfBot, your personal Rowan University assistant! How can I help?
+slots:
+  title:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: title
+  professor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: professor
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+
+
