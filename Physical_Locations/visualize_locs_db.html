@@ -1,0 +1,2094 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            .table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            .table th, .table td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+    <h2>locations</h2><table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>description</th>
+      <th>keywords</th>
+      <th>categories</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>departments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>230 Victoria</td>
+      <td>Student housing on Victoria Street, 6 floors of housing holding 413 student beds. Each suite in this building consists of a single or double bedrooms, with up to 8 bedrooms per housing suite. Each suite shares a kitchen, a bathroom and a living area. The building also houses a recreation center, a parking garage, retail space, and classrooms and offices.</td>
+      <td>Writing Arts, Communication studies, parking, recreation, gym, housing, new housing, apartments, student housing,</td>
+      <td>Academic Buildings</td>
+      <td>39.704281</td>
+      <td>-75.113571</td>
+      <td>Writing Arts Communication Studies</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>301 West High Street</td>
+      <td>The three story building features the new Rowan University art gallery. It  features classrooms, faculty offices, computer labs and student lounge spaces.</td>
+      <td>Journalism. PR, Public Relations, computer lab, advertising, faculty, art, gallery, art gallery,</td>
+      <td>Academic Buildings</td>
+      <td>39.703812</td>
+      <td>-75.115105</td>
+      <td>Public Relations &amp; Advertising</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>6 High Street</td>
+      <td>This former bank building in downtown Glassboro is now home to the Dean's office for the College of Communication &amp; Creative Arts,</td>
+      <td>writing arts, dean, writing arts dean, offices, high street, bank, bank building,</td>
+      <td>Academic Buildings</td>
+      <td>39.702560</td>
+      <td>-75.111809</td>
+      <td>Journalism</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>600 Whitney Avenue</td>
+      <td>This building houses the Dean's office for the College of Earth and Environment as well as the Fossil Park Office.</td>
+      <td>earth and environment, dean's office, fossil park, fossil park office,</td>
+      <td>Academic Buildings</td>
+      <td>39.705441</td>
+      <td>-75.118759</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Bozorth Hall</td>
+      <td>Originally built as a campus demonstration elementary school, Bozorth Hall houses the College of Communication &amp; Creative Arts offices, Rowan Radio, Rowan TV, a distance learning classroom, film-editing facilities, a computer-equipped journalism newsroom, an advertising/PR client suite, a layout room, and a computer-equipped writing laboratory.</td>
+      <td>communication and creative arts, rowan radio, rowan TV, newsroom, writing, writing lab,</td>
+      <td>Academic Buildings</td>
+      <td>39.708061</td>
+      <td>-75.121704</td>
+      <td>Radio/TV/Film.</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Bunce Hall</td>
+      <td>The first building on campus, Bunce Hall was built in 1923. This building features classroom and office space as well as the Tohill Auditorium.</td>
+      <td>dance, foreign language and literatures, languages, french, spanish, russian, Chinese, Japanese, arabic</td>
+      <td>Academic Buildings</td>
+      <td>39.707233</td>
+      <td>-75.120613</td>
+      <td>EnglishForeign Languages and LiteraturesPhilosophy and Religion</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Business Hall</td>
+      <td>Home to the Rohrer College of Business, this $63.2 million building opened in 2017. It includes 14 classrooms, seven conference rooms, 10 specialty spaces, 15 administrative offices and 70 faculty offices. The building houses RCB's trading room with its ticker tracking the stock market in real time;  the Center for Professional Development, a valuable resource for students dedicated to providing career preparation skills designed to make them stand out in the job market; and Hatch House, a business accelerator dedicated to supporting student entrepreneurism in all majors across campus.</td>
+      <td>Business, marketing, finance, stock market, accounting, new, new building,</td>
+      <td>Academic Buildings</td>
+      <td>39.710075</td>
+      <td>-75.122559</td>
+      <td>Accounting FinanceManagementEntrepreneurshipMarketingBusiness Information Systems.</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Campbell Library</td>
+      <td>The six-story Campbell Library is home to nearly 400,000 books and multimedia, a selective Government Documents Depository, Rowan University Archives, Special Collections, and the RCA Heritage Museum. The Writing Center is housed on the first floor room 131.</td>
+      <td>library, books, sociology, anthropology, law and justice, writing center, writing,</td>
+      <td>Academic Buildings</td>
+      <td>39.709309</td>
+      <td>-75.118965</td>
+      <td>Sociology and Anthropology  Law and Justice</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Discovery Hall</td>
+      <td>Discovery Hall expands facilities for the School of Earth &amp; Environment and the College of Science &amp; Mathematics. Opened in September 2021, it includes 4 stories of 6 lecture-style classrooms, 6 active-learning classrooms, 4 chemistry labs, 2 biology labs, labs for faculty research, environmental science, and geology.</td>
+      <td>research lab, biology lab, chemistry lab, environmental lab, classrooms, lecture, lounge, geology, geography, science, mathematics</td>
+      <td>Academic Buildings</td>
+      <td>39.707781</td>
+      <td>-75.115499</td>
+      <td>Earth and EnvironmentScience and Mathmatics</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>Engineering Hall</td>
+      <td>Connected to the College's original Rowan Hall by a third-floor pedestrian bridge, Engineering Hall, opened 2017, is a gateway to the University's campus off Bowe Boulevard in Glassboro. The facility includes four classrooms, 19 research and teaching labs and 14 collaboration rooms. The building also includes a two-story dining/study/gathering space as well as outdoor space for students to study and meet.</td>
+      <td>Engineering, rowan, engineer, science, new building, food</td>
+      <td>Academic Buildings</td>
+      <td>39.712971</td>
+      <td>-75.121864</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>Enterprise Center</td>
+      <td>A mixed-use facility, the 53,000-square-foot Enterprise Center houses the College of Graduate and Continuing Education. It includes four floors of classrooms, lecture halls, a nursing experimental room, and administrative offices. The Enterprise Center also features 9,600 square feet of first-floor retail space and a 1,194-space, multi-level parking garage.</td>
+      <td>global learning, enterprise center, continuing education, graduate studies,</td>
+      <td>Academic Buildings</td>
+      <td>39.705650</td>
+      <td>-75.113388</td>
+      <td>NursingGlobal Learning &amp; Partnerships.</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>Esbjornson Gym</td>
+      <td>Esby Gym for short, this facility houses classrooms, Health &amp; Exercise Science faculty offices and a secondary pool and gym used by the Rowan Swim team.</td>
+      <td>health and exercise science, health, exercise, personal trainer, training, gym, pool, swim team,</td>
+      <td>Academic Buildings</td>
+      <td>39.710922</td>
+      <td>-75.119049</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>Hawthorn Hall</td>
+      <td>Originally built as a residence hall, today Hawthorn Hall houses classrooms and faculty offices for the College of Communication &amp; Creative Arts and contains 27 offices, four classrooms and two conference rooms.</td>
+      <td>writing arts, classroom, communication studies, communication and creative arts, offices,</td>
+      <td>Academic Buildings</td>
+      <td>39.708836</td>
+      <td>-75.121193</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>James Hall</td>
+      <td>Home to the College of Education and named after Rowan University's 5th president. Dr. Herman D. James Hall features classrooms and faculty offices, as well as distance-learning facilities, the Early Childhood Demonstration Center and a variety of laboratory space and outreach centers.</td>
+      <td>Education, teaching, classrooms, James, James Hall, learning, college of education, lecture halls,</td>
+      <td>Academic Buildings</td>
+      <td>39.711788</td>
+      <td>-75.119484</td>
+      <td>Educational Services &amp; LeadershipInterdisciplinary &amp; Inclusive EducationLanguage, Literacy, &amp; Sociocultural EducationScience, Technology, Engineering, Arts, and Math EducationHealth and Exercise Science.</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>Memorial Hall</td>
+      <td>Memorial Hall houses several dance studios where dance rehearsals and classes take place. The building also houses information (computer) resources, the Help Desk, Web Services, and the Duplicating Center.</td>
+      <td>dance, dance studios, dance studio, rehearsals, dance class, help desk, nss workshop, computer help,</td>
+      <td>Academic Buildings</td>
+      <td>39.707645</td>
+      <td>-75.119652</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>R.O.T.C.</td>
+      <td>The Reserve Officers' Training Corps (ROTC) program provides students with leadership, management and basic military skills training. Students can receive scholarships and have the option of going on active duty or reserve duty after graduation with the National Guard or Army.</td>
+      <td>rotc, r.o.t.c., R.O.T.C, military, army reserve officers training corps,</td>
+      <td>Academic Buildings</td>
+      <td>39.711525</td>
+      <td>-75.127136</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>Robinson Hall</td>
+      <td>Located in the center of campus, Robinson Hall is one of the largest classroom buildings on campus. The core of the building consists of classrooms and seminar rooms, though it also houses a small cafe stand and seating on the first floor.</td>
+      <td>Classrooms, seminar rooms, general education, gen eds, liberal arts, liberal science,</td>
+      <td>Academic Buildings</td>
+      <td>39.710606</td>
+      <td>-75.119972</td>
+      <td>Computer ScienceSchool of Health ProfessionsHistoryMathematicsPolitical Science EconomicsPsychologyGeography, Planning, &amp; SustainabilityGeology</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>Rowan Hall</td>
+      <td>Home to the Henry M. Rowan College of Engineering, 95,000-square-foot Rowan Hall features three floors of offices, classrooms, laboratories and the 115-seat Betty Rowan Auditorium.</td>
+      <td>engineering, rowan hall, rowan, offices, classrooms, labs, auditorium, engineering auditorium,</td>
+      <td>Academic Buildings</td>
+      <td>39.712257</td>
+      <td>-75.122246</td>
+      <td>Biomedical EngineeringChemical EngineeringCivil and Environmental EngineeringElectrical and Computer EngineeringExperiential Engineering EducationMechanical Engineering.</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>Science Hall</td>
+      <td>Three-story Science Hall features the 102-seat Edelman Planetarium, a rooftop observatory with a 16-inch telescope, 27 teaching laboratories and 22 research labs.</td>
+      <td>Science, biology, chemistry, biochemistry, physics, astronomy, planetarium, labs, laboratory, research,</td>
+      <td>Academic Buildings</td>
+      <td>39.710003</td>
+      <td>-75.120850</td>
+      <td>Chemistry BiochemistryBiological SciencesMolecular &amp; Cellular BiosciencesPhysicsAstronomy.</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>Westby Hall</td>
+      <td>Westby Hall contains art studios for ceramics, sculpture, jewelry/metals, painting, printmaking and photography, computer labs, classrooms, a lecture hall for 110 students, exhibition galleries, and faculty offices.</td>
+      <td>Art, jewelry, ceramics, painting, sketching</td>
+      <td>Academic Buildings</td>
+      <td>39.710152</td>
+      <td>-75.121529</td>
+      <td>Art Department</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>Whitney Center</td>
+      <td>A mixed-use facility located on Rowan Boulevard, Whitney Center includes living space and administrative space. The building houses up to 278 residents in single occupancy bedrooms in apartments housing one to four students. Each apartment includes a kitchen, breakfast nook, living room and bathroom, as well as access to laundry facilities and recreational spaces. Whitney Center is also home to the Bantivoglio Honors Program and contains offices, a lounge and classroom space.</td>
+      <td>Honors, apartments, honors concentration, housing, apartments, student housing,</td>
+      <td>Academic Buildings</td>
+      <td>39.706696</td>
+      <td>-75.114624</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>Wilson Hall</td>
+      <td>Home to the College of Performing Arts, Wilson Hall contains the Dean of the College of Fine &amp; Performing Arts, two large rehearsal rooms, Boyd Recital Hall, practice rooms, classrooms, student lounges, a music library, faculty offices, the concert box office and W. Clarke Pfleeger Hall - a 1,000 seat auditorium.</td>
+      <td>Theatre, performing arts, music, music performance, music education, dance, musical theatre,</td>
+      <td>Academic Buildings</td>
+      <td>39.711655</td>
+      <td>-75.121414</td>
+      <td>MusicTheatre and Dance</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>411 Ellis Street</td>
+      <td>This lot is for commuter parking only.</td>
+      <td>None</td>
+      <td>Commuter Parking</td>
+      <td>39.701839</td>
+      <td>-75.120186</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>Lot A</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>None</td>
+      <td>Commuter Parking</td>
+      <td>39.710728</td>
+      <td>-75.123940</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>Lot B-1</td>
+      <td>This parking is for commuter parking only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.712505</td>
+      <td>-75.117332</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>Lot C</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>commuter, parking, commuter parking, student, student parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.714695</td>
+      <td>-75.119835</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>Lot D</td>
+      <td>This lot is for commuter parking only.</td>
+      <td>None</td>
+      <td>Commuter Parking</td>
+      <td>39.714935</td>
+      <td>-75.121422</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>Lot D-1</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>parking, commuter, commuter parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.713898</td>
+      <td>-75.122414</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>Lot F-1</td>
+      <td>This parking is for commuter parking only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.711666</td>
+      <td>-75.127014</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>Lot O</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>commuter, student, commuter parking, student parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.712910</td>
+      <td>-75.119278</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>Lot R</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>commuter, parking, student parking, commuter parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.705589</td>
+      <td>-75.120148</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>Lot Y</td>
+      <td>This lot is for commuter student parking only.</td>
+      <td>commuter, student, commuter parking, student parking, parking,</td>
+      <td>Commuter Parking</td>
+      <td>39.706116</td>
+      <td>-75.122215</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>Lot A-1</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.710938</td>
+      <td>-75.123619</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>Lot A-2</td>
+      <td>This lot is for employee parking only.</td>
+      <td>None</td>
+      <td>Employee Parking</td>
+      <td>39.709969</td>
+      <td>-75.121971</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>Lot C-1</td>
+      <td>This lot is for employee parking only.</td>
+      <td>None</td>
+      <td>Employee Parking</td>
+      <td>39.713909</td>
+      <td>-75.118591</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>Lot D-2</td>
+      <td>This parking is for employees only.</td>
+      <td>D-2, employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.713699</td>
+      <td>-75.122063</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>Lot E</td>
+      <td>This parking is for employees only.</td>
+      <td>parking, employee, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.707592</td>
+      <td>-75.120766</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>Lot G</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.708736</td>
+      <td>-75.121620</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>Lot H</td>
+      <td>This parking is for employees.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.708359</td>
+      <td>-75.119324</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>Lot H-1</td>
+      <td>This parking is for employees.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.707664</td>
+      <td>-75.118958</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>Lot K</td>
+      <td>This lot is for employee parking only.</td>
+      <td>None</td>
+      <td>Employee Parking</td>
+      <td>39.708069</td>
+      <td>-75.115082</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>Lot M</td>
+      <td>This parking is for employees only.</td>
+      <td>parking, employee, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.711205</td>
+      <td>-75.118370</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>Lot N</td>
+      <td>This lot is for employee parking only.</td>
+      <td>None</td>
+      <td>Employee Parking</td>
+      <td>39.705402</td>
+      <td>-75.118538</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>Lot O-1</td>
+      <td>This lot is for employee parking only.</td>
+      <td>parking, student, commuter, commuter student, commuter parking,</td>
+      <td>Employee Parking</td>
+      <td>39.712482</td>
+      <td>-75.120453</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>Lot O-2</td>
+      <td>This lot is for employee parking only.</td>
+      <td>None</td>
+      <td>Employee Parking</td>
+      <td>39.713387</td>
+      <td>-75.121529</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>Lot P</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.706028</td>
+      <td>-75.119339</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>Lot S</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.706799</td>
+      <td>-75.118408</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>Lot T</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.706547</td>
+      <td>-75.116379</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>Lot U</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.708046</td>
+      <td>-75.116402</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>50</td>
+      <td>Lot X</td>
+      <td>This lot is for employee parking only.</td>
+      <td>commuter, parking, commuter parking, student parking, student,</td>
+      <td>Employee Parking</td>
+      <td>39.708141</td>
+      <td>-75.111946</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>51</td>
+      <td>Lot Z-1</td>
+      <td>This parking is for employees only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Employee Parking</td>
+      <td>39.708317</td>
+      <td>-75.122017</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>52</td>
+      <td>Chestnut</td>
+      <td>This lot is for resident student parking only.</td>
+      <td>None</td>
+      <td>Resident Parking</td>
+      <td>39.710056</td>
+      <td>-75.113838</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>53</td>
+      <td>Chestnut-1</td>
+      <td>This lot is for resident parking only.</td>
+      <td>None</td>
+      <td>Resident Parking</td>
+      <td>39.709057</td>
+      <td>-75.112541</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>54</td>
+      <td>Edgewood Park Apartments Lot</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>resident, student, parking, student parking, resident parking, edgewood, edgewood parking,</td>
+      <td>Resident Parking</td>
+      <td>39.711109</td>
+      <td>-75.115341</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>55</td>
+      <td>Lot B</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>parking, resident, resident student, resident parking, student parking,</td>
+      <td>Resident Parking</td>
+      <td>39.712093</td>
+      <td>-75.116783</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>56</td>
+      <td>Lot F</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>parking, student, student parking, resident, resident parking,</td>
+      <td>Resident Parking</td>
+      <td>39.711468</td>
+      <td>-75.125099</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>57</td>
+      <td>Lot J</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>resident, parking, resident parking, student parking, student,</td>
+      <td>Resident Parking</td>
+      <td>39.707764</td>
+      <td>-75.115562</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>58</td>
+      <td>Lot W</td>
+      <td>This parking is for resident parking only.</td>
+      <td>employee, parking, employee parking,</td>
+      <td>Resident Parking</td>
+      <td>39.710365</td>
+      <td>-75.117538</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>59</td>
+      <td>Rowan Boulevard Garage</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>resident, parking, student parking, resident parking,</td>
+      <td>Resident Parking</td>
+      <td>39.705803</td>
+      <td>-75.112961</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>60</td>
+      <td>Townhouse Garage</td>
+      <td>This parking is for resident student parking only.</td>
+      <td>parking, student, resident, resident parking, student parking,</td>
+      <td>Resident Parking</td>
+      <td>39.708309</td>
+      <td>-75.123489</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>61</td>
+      <td>Lot H</td>
+      <td>This lot is the campus visitor parking lot.</td>
+      <td>visitor, parking, visitor parking,</td>
+      <td>Visitor Parking</td>
+      <td>39.708355</td>
+      <td>-75.119347</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>62</td>
+      <td>Lot H-1</td>
+      <td>This lot is the campus visitor parking lot.</td>
+      <td>visitor, parking, visitor parking,</td>
+      <td>Visitor Parking</td>
+      <td>39.707664</td>
+      <td>-75.118958</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>63</td>
+      <td>220 Rowan Boulevard</td>
+      <td>Nexus in 2015 opened 220 Rowan Boulevard, a 316,000 square-foot building with ground floor medical, dining and retail space and upper level student and market rate housing. Initial commercial tenants at 220 Rowan Boulevard include a seven-day per week Inspira Urgent Care facility, the Cooper Bone and Joint Institute, a branch of South Jersey Federal Credit Union and a Tony Luke's cheesesteak restaurant, and a 300-seat Chickie's &amp; Pete's sports bar and restaurant.</td>
+      <td>Housing, retail, dining, food, commercial, apartments</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.705280</td>
+      <td>-75.113693</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>64</td>
+      <td>223 West High Street</td>
+      <td>A four story building with 144 student beds for upper classman housing. This building is suite style with each apartment providing bedrooms, a kitchen, bathrooms, and a living area.</td>
+      <td>None</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.703445</td>
+      <td>-75.114006</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>65</td>
+      <td>230 Victoria</td>
+      <td>Student housing on Victoria Street, 6 floors of housing holding 413 student beds. Each suite in this building consists of a single or double bedrooms, with up to 8 bedrooms per housing suite. Each suite shares a kitchen, a bathroom and a living area. The building also houses a recreation center, a parking garage, retail space, and classrooms and offices.</td>
+      <td>Writing Arts, Communication studies, parking, recreation, gym, housing, new housing, apartments, student housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.704281</td>
+      <td>-75.113571</td>
+      <td>Writing Arts Communication Studies</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>66</td>
+      <td>Chestnut Hall</td>
+      <td>As one of 'The North Halls' comprised of Chestnut, Magnolia and Willow Halls, these buildings in all house 750 students. Students live in suites and share restroom facilities. Suites accommodate five to 16 students who share a lounge and common bathroom, both of which are cleaned by University Housing staff. The complex also features a laundry room.</td>
+      <td>north hall, housing, student housing, residence hall,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.709602</td>
+      <td>-75.113899</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>67</td>
+      <td>Edgewood Park Apartments</td>
+      <td>Edgewood Park Apartments consist of four separate buildings that are identical in structure. Each building has three floors each with 24 individual units and house up to 384 students. Apartments feature two bedrooms, a living room, dining room, kitchen, and bathroom. The apartments are furnished and air-conditioned. The individual apartments are designated same gender units and each building is co-ed.</td>
+      <td>housing, student housing, residence hall,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.710609</td>
+      <td>-75.115501</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>68</td>
+      <td>Evergreen Hall</td>
+      <td>A three story residence hall, Evergreen accommodates 204 students housed in two bedroom suites that each include their own bathroom which each suite is responsible for cleaning. Laundry facilities are on each floor as well as study rooms and a lounge area featured on the first floor.</td>
+      <td>housing, student housing, residence hall, suite style, suite,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.707081</td>
+      <td>-75.116753</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>69</td>
+      <td>Holly Pointe Commons</td>
+      <td>Opened in 2016, this building houses 1,415 students. With 7 floors at its' highest and 4 floors at its' lowest, in addition to residential housing this building contains a convenience store, a Starbucks, and a Dining Hall to suit the needs of students, with Freshman and Sophomore aged students in mind. Bathrooms are floor-style and cleaned by Rowan University Staff, and rooms are in single or double occupancy.</td>
+      <td>Housing, student housing, freshman housing, sophomore housing, dorms, dormitories, floor style, learning communities,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.707336</td>
+      <td>-75.112366</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>70</td>
+      <td>International House</td>
+      <td>Built in 1855 as a private residence, this stately home in the town of Glassboro serves as living quarters for international students and scholars.</td>
+      <td>international, international student, student housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.706161</td>
+      <td>-75.110207</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>71</td>
+      <td>Laurel Hall</td>
+      <td>One the University's first residence halls, Laurel Hall houses up to 59 students. Each suite houses eight to 14 students who share a common hallway and community bathroom, both of which are cleaned by University Housing staff.</td>
+      <td>housing, student housing, dorms, dormitories, floor style,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.707268</td>
+      <td>-75.119255</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>72</td>
+      <td>Magnolia Hall</td>
+      <td>Magnolia houses up to 201 residents on three floors. As one of 'The North Halls' comprised of Chestnut, Magnolia and Willow Halls, these buildings in all house 750 students. Students live in suites and share restroom facilities. Suites accommodate five to 16 students who share a lounge and common bathroom, both of which are cleaned by University Housing staff. The complex also features a laundry room.</td>
+      <td>housing, student housing, dorms, dormitories, suite, suite style,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.709641</td>
+      <td>-75.115036</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>73</td>
+      <td>Mimosa Hall</td>
+      <td>Located in the center of campus, Mimosa Hall houses 315 students. Rooms are arranged by suites, and each suite contains two to three double bedrooms and a bathroom. Each suite shares a common bathroom, which students are responsible for cleaning. Mimosa also features laundry facilities on each floor as well as a computer lab.</td>
+      <td>dorm, housing, student housing, dormitories, suite, suite style,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.709827</td>
+      <td>-75.117538</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>74</td>
+      <td>Mullica Hall</td>
+      <td>Mullica Hall houses 104 residents. Each two-bedroom suite shares a common bathroom, which students are responsible for cleaning. Mullica also features laundry facilities and study rooms on each floor, with a lounge area on the first floor.</td>
+      <td>housing, dormitories, student housing, suite, suite style,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.707054</td>
+      <td>-75.115601</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>75</td>
+      <td>Oak Hall</td>
+      <td>One the University's first residence halls Oak Hall houses up to 59 students. Each suite houses eight to 14 students who share a common hallway and community bathroom, both of which are cleaned by University Housing staff.</td>
+      <td>housing, dormitories, student housing, floor style, floor,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.707088</td>
+      <td>-75.118561</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>76</td>
+      <td>Rowan Boulevard Apartments</td>
+      <td>The Rowan Boulevard apartments house up to 884 students in four-bedroom (single occupancy) apartments that include two bathrooms, a kitchen, breakfast nook and living room area. The complex also contains exercise and weight rooms, meeting rooms, laundry facilities and a Public Safety satellite office.</td>
+      <td>rowan boulevard, robo, apartment style, student housing, apartment, upper level housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.706146</td>
+      <td>-75.111923</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>77</td>
+      <td>Townhouses</td>
+      <td>The 113-unit townhouse complex houses up to 465 students living in single occupancy rooms in four- and six-bedroom configurations. Each townhouse features a living room, kitchen and bathroom. The complex also has a parking garage, community center and laundry facilities.</td>
+      <td>townhouses, student housing, upper level housing, university housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.709267</td>
+      <td>-75.122887</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>78</td>
+      <td>Triad Hall Apartments</td>
+      <td>Triad Apartments house up to 378 students in one-, two-, or three-bedroom configurations that feature a kitchen, living room and bathroom. Laundry facilities are on site.</td>
+      <td>housing, student housing, dormitories, apartment style, upper level housing, on campus housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.711826</td>
+      <td>-75.125755</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>79</td>
+      <td>Whitney Center</td>
+      <td>A mixed-use facility located on Rowan Boulevard, Whitney Center includes living space and administrative space. The building houses up to 278 residents in single occupancy bedrooms in apartments housing one to four students. Each apartment includes a kitchen, breakfast nook, living room and bathroom, as well as access to laundry facilities and recreational spaces. Whitney Center is also home to the Bantivoglio Honors Program and contains offices, a lounge and classroom space.</td>
+      <td>Honors, apartments, honors concentration, housing, apartments, student housing,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.706696</td>
+      <td>-75.114624</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>80</td>
+      <td>Willow Hall</td>
+      <td>Willow houses up to 203 residents on three floors. As one of 'The North Halls' comprised of Chestnut, Magnolia and Willow Halls, these buildings in all house 750 students. Students live in suites and share restroom facilities. Suites accommodate five to 16 students who share a lounge and common bathroom, both of which are cleaned by University Housing staff. The complex also features a laundry room.</td>
+      <td>housing, student housing, dormitories,</td>
+      <td>Residence Halls &amp; Apartments</td>
+      <td>39.709919</td>
+      <td>-75.116135</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>81</td>
+      <td>301 West High Street</td>
+      <td>The three story building features the new Rowan University art gallery. It  features classrooms, faculty offices, computer labs and student lounge spaces.</td>
+      <td>Journalism. PR, Public Relations, computer lab, advertising, faculty, art, gallery, art gallery,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.703812</td>
+      <td>-75.115105</td>
+      <td>Public Relations &amp; Advertising</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>82</td>
+      <td>6 E. High Street</td>
+      <td>Built in 1926, the former bank building is now home to the Dean's office for the College of Communication and Creative Arts and faculty for the Department of Journalism.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.702534</td>
+      <td>-75.111778</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>83</td>
+      <td>600 Whitney Avenue</td>
+      <td>This building houses the Dean's office for the College of Earth and Environment as well as the Fossil Park Office.</td>
+      <td>earth and environment, dean's office, fossil park, fossil park office,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.705441</td>
+      <td>-75.118759</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>84</td>
+      <td>Barnes &amp; Noble Bookstore</td>
+      <td>The University bookstore, Barnes &amp; Noble at Rowan Boulevard offers textbooks, school supplies and Rowan Pros apparel and features an in-store Starbucks.</td>
+      <td>bookstore, coffee, starbucks, recreation, reading, writing,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.705070</td>
+      <td>-75.112617</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>85</td>
+      <td>Bole Hall</td>
+      <td>The administrative center of the university, Bole Hall houses the Office of the President and Office of the Provost and is named after former Dean Robert Bole.</td>
+      <td>president, provost, university president, staff, offices,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706181</td>
+      <td>-75.120506</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>86</td>
+      <td>Bole Hall Annex</td>
+      <td>Our Department of Public Safety and the University Research Office are located in Bole Hall Annex.</td>
+      <td>public safety, research, research office,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706490</td>
+      <td>-75.119621</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>87</td>
+      <td>Carriage House</td>
+      <td>Built in 1849 to service Hollybush Mansion, the Carriage House is now home to University Publications.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706238</td>
+      <td>-75.118607</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>88</td>
+      <td>Cassady Facilities Building</td>
+      <td>The Otto P. Cassady Maintenance Building serves as the main office complex for maintenance operations.</td>
+      <td>facilities, maintenance, signs, sign shop,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708252</td>
+      <td>-75.114815</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>89</td>
+      <td>Chamberlain Student Center</td>
+      <td>A campus focal point where students gather for events and services, the Student Center stands three stories in the center of campus. The building features the information desk, student ID room, mailroom, an ATM, Eynon Ballroom, meeting and conference rooms, and eateries including the dining hall, food court, outdoor dining area, Owl's Nest restaurant, Prof Place convenience store and Starbucks.</td>
+      <td>food, dining, starbucks, dining hall, cafeteria, lounge area, lounge, food court, patio, seating,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708828</td>
+      <td>-75.117798</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>90</td>
+      <td>Courtyard Marriott Hotel/Conference Center</td>
+      <td>Located on Rowan Boulevard, Courtyard Marriott offers convenience for overnight visitors to Rowan and professionals seeking conference and meeting space.</td>
+      <td>mariott, hotel, out of town, stay night, conference rooms, meetings, business room,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706627</td>
+      <td>-75.113571</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>91</td>
+      <td>Hering Heating Plant</td>
+      <td>Hering Heating Plant houses the centralized heating and co-generation equipment.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708443</td>
+      <td>-75.116119</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>92</td>
+      <td>Hollybush Mansion</td>
+      <td>Built in 1849, Hollybush Mansion was the site of the historic summit meeting between President Lyndon B. Johnson and Soviet Premier Alexei B. Kosygin in 1967. Now a museum and meeting center, visitors can examine displays that illustrate the building's restoration, the history of the glass industry in the area and the Summit.</td>
+      <td>hollybush, history, historic, president, museum,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706287</td>
+      <td>-75.118004</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>93</td>
+      <td>Interfaith and Spiritual Exploration Center</td>
+      <td>According to their site, the Interfaith and Spiritual Exploration Center aims to promote a campus environment that is inclusive of student's religious, spiritual, and secular identities and allows for expression and exploration of spiritual beliefs and values. Programs and initiatives of the Center will advance understanding and appreciation of the contributions of communities varying beliefs. Located on Floor 2 of Hawthorn Hall.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708637</td>
+      <td>-75.121445</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>94</td>
+      <td>International House</td>
+      <td>Built in 1855 as a private residence, this stately home in the town of Glassboro serves as living quarters for international students and scholars.</td>
+      <td>international, international student, student housing,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706161</td>
+      <td>-75.110207</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>95</td>
+      <td>John Green Team House</td>
+      <td>Opened in 1971 a multi-million dollar renovation completed in 2013 expanded the Team House, a facility that features a training room, laundry and shower area and locker rooms for each team as well as intercollegiate athletics, coaching and staff offices.</td>
+      <td>sports, football, team house,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.713753</td>
+      <td>-75.118675</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>96</td>
+      <td>LGBTQIA+ Center</td>
+      <td>According to their site, the LGBTQIA+ Center is a resource for students who identify as Lesbian, Gay, Bisexual, Transgender, Queer/Questioning, Intersex, or Agender/Asexual.  The center intends to create safer spaces for students by supporting students' exploration of their identity, and advocate for campus inclusion for the LGBTQIA+ community at Rowan.  The staff of the Center works to fulfill its goals through advocacy for campus inclusion of the LGBTQIA+ community at Rowan and by providing relevant training opportunities to students, faculty, and staff.Located on Floor 2 of Hawthorn Hall.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708736</td>
+      <td>-75.121315</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>97</td>
+      <td>Multicultural Resource Center (MCRC)</td>
+      <td>According to their site, the Multicultural Resource Center is an evolution of the long established Office of Multicultural Affairs, whose services and programs are now housed in the Office of Social Justice, Inclusion &amp; Conflict Resolution. The Multicultural Center serves as a resource for students from diverse cultural and identity groups, and is intended to promote celebration of diversity, development of cross cultural understanding and competency, and inclusion of diverse people in the Rowan community.  The Center supports and initiates programs that promotes the acknowledgement and acceptance of the differences that define the self-identity of faculty, staff, and students. Its ongoing purpose is the pursuit of maintaining an environment that cultivates the ability for all constituencies of Rowan University to safely express those identities within the parameters of the institution's academic and social behavior expectations.Located on Floor 2 of Hawthorn Hall.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708755</td>
+      <td>-75.121185</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>98</td>
+      <td>Sangree Greenhouse</td>
+      <td>A majority of the beautiful flowers, trees and shrubbery that beautify our campus were first grown as seedlings in John Sangree Greenhouse. One of the oldest structures on campus, the greenhouse was originally built in 1923.</td>
+      <td>greenhouse, landscaping,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.706860</td>
+      <td>-75.119987</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>99</td>
+      <td>Savitz Hall (Admissions)</td>
+      <td>The main hub for student services, Savitz Hall houses offices for the Vice President for Student Affairs, Dean of Students, Career Management Center, Developmental Education, Tutoring, Basic Skills/Testing, Admissions, EOF/MAP, Registrar, Financial Aid, Bursar, Residential Learning &amp; University Housing, Multicultural/International Affairs, Specialized Services, Honors Program and Women's Studies.</td>
+      <td>student resources, housing, financial aid, bursar, registrar, basic skills, testing, dean of students, career, career management, tutoring, tutor,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.709515</td>
+      <td>-75.119659</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>100</td>
+      <td>Shpeen Hall</td>
+      <td>Located on Academy Street in Glassboro, the former elementary school Shpeen Hall houses administrative offices, including the R. Grace Bagg Alumni Center and the Rowan Foundation. It is home to University Advancement, including Alumni Relations.</td>
+      <td>shpeen, administrative, admin, offices, alumni, alumni relations, rowan foundation, university advancement,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.703869</td>
+      <td>-75.109184</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>101</td>
+      <td>South Jersey Technology Park</td>
+      <td>Located on Route 322 (Mullica Hill Road) near the junction of Rt. 55 in Mantua Township, SJTP provides competitively priced, class 'A' facilities for start-up and established companies that bring innovative technologies to the marketplace, and serves as a home for technology-focused researchers, inventors, entrepreneurs, professors and students. The recently completed Samuel H. Jones Innovation Center is the first of 25 planned buildings.The Samuel H. Jones Innovation Center is a 45,000 square-foot LEED Certified building with approximately 22,500 square feet devoted to laboratory and office space for academic research and 22,500 square feet available for private tenants, including Rowan's Technology Business Incubator for startup companies. Current tenants of the Samuel H. Jones Innovation Center include the Rowan College of Business incubator, and Rowan College of Engineering research laboratories.</td>
+      <td>technology, research, tech park, sj tech park, south jersey technology park,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.719616</td>
+      <td>-75.145424</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>102</td>
+      <td>Winans Hall</td>
+      <td>Home to Rowan's Wellness Center, Winans Hall contains Student Health Services, Counseling &amp; Psychological Services, Healthy Campus Initiatives, Alcohol and Other Drug counseling services and emergency services.</td>
+      <td>winans, student health, health services, counseling, drug counseling, alcohol counseling,</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708420</td>
+      <td>-75.116959</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>103</td>
+      <td>Women's Center</td>
+      <td>According to their site, the Women's Center in the Office of Social Justice, Inclusion and Conflict Resolution exists to promote gender inclusivity and equity in our university community, and where individuals are empowered to grow in their understanding of gender-identity, social justice, and the skills needed to lead a more just society.Located on Floor 2 of Hawthorn Hall.</td>
+      <td>None</td>
+      <td>Administrative &amp; Support</td>
+      <td>39.708637</td>
+      <td>-75.121231</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>104</td>
+      <td>Baseball Field</td>
+      <td>For use by baseball team, this field called 'The Nest' is located near Bunce and Bozorth Halls.</td>
+      <td>baseball, baseball field, team, sport, athletics,</td>
+      <td>Athletics</td>
+      <td>39.706989</td>
+      <td>-75.121979</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>105</td>
+      <td>Basketball Courts</td>
+      <td>Located near several residence halls, these outdoor courts are open for use.</td>
+      <td>basketball, courts, basketball courts, outdoor courts,</td>
+      <td>Athletics</td>
+      <td>39.709400</td>
+      <td>-75.116776</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>106</td>
+      <td>Basketball Courts</td>
+      <td>These courts outside of Mullica Hall are available to students as a place to shoot hoops.</td>
+      <td>None</td>
+      <td>Athletics</td>
+      <td>39.707260</td>
+      <td>-75.115906</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>107</td>
+      <td>Esbjornson Gym</td>
+      <td>Esby Gym for short, this facility houses classrooms, Health &amp; Exercise Science faculty offices and a secondary pool and gym used by the Rowan Swim team.</td>
+      <td>health and exercise science, health, exercise, personal trainer, training, gym, pool, swim team,</td>
+      <td>Athletics</td>
+      <td>39.710922</td>
+      <td>-75.119049</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>108</td>
+      <td>Intramural Turf Field</td>
+      <td>Field is available for use by Students, Faculty/Staff and Recreation Center members for informal recreation during designated hours and scheduled events. All patrons must show a Rowan University ID to enter the facility.</td>
+      <td>field, intramural, multi use, team, sports, rugby,</td>
+      <td>Athletics</td>
+      <td>39.710388</td>
+      <td>-75.116791</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>109</td>
+      <td>John Green Team House</td>
+      <td>Opened in 1971 a multi-million dollar renovation completed in 2013 expanded the Team House, a facility that features a training room, laundry and shower area and locker rooms for each team as well as intercollegiate athletics, coaching and staff offices.</td>
+      <td>sports, football, team house,</td>
+      <td>Athletics</td>
+      <td>39.713753</td>
+      <td>-75.118675</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>110</td>
+      <td>Practice Fields (West Campus)</td>
+      <td>Situated on 17.5 acres on Route 322 across from the South Jersey Technology Park at Rowan University, the practice facility includes two fields for Prof football, soccer, field hockey and lacrosse athletes. One of the fields will be dedicated to the football and men's and women's soccer teams. The other field is for Rowan field hockey and lacrosse teams.</td>
+      <td>practice, practice fields, soccer, football, west, west campus,</td>
+      <td>Athletics</td>
+      <td>39.715992</td>
+      <td>-75.145821</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>111</td>
+      <td>Rec Center</td>
+      <td>Located on the Glassboro campus, the Rec is a 92,000-sq.-ft. health club open year-round that offers recreational activities, fitness programs, intramural sports and instructional classes.</td>
+      <td>gym, exercise, weights, cardio, indoor track, pool, track,</td>
+      <td>Athletics</td>
+      <td>39.710632</td>
+      <td>-75.118156</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>112</td>
+      <td>Richard Wackar Stadium</td>
+      <td>The stadium includes aluminum seating, a scoreboard, press box, and an elevator to assist physically challenged fans. Certain equipment as well as the required University staff to operate it can be easily added a rental package for some events, such the press box, the sound system, and the score board.</td>
+      <td>football, lacrosse, stadium, profs, team, sports,</td>
+      <td>Athletics</td>
+      <td>39.714104</td>
+      <td>-75.120438</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>113</td>
+      <td>Rowan University Fitness Center</td>
+      <td>This new fitness center opened in 2017 features cardio machines such as ellipticals, stationary bikes, Stair Masters, in addition to weights and a fully functioning weight room.</td>
+      <td>None</td>
+      <td>Athletics</td>
+      <td>39.704273</td>
+      <td>-75.113762</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>114</td>
+      <td>Sand Volleyball Court</td>
+      <td>The sand volleyball court, next to the basketball courts, are open for use.</td>
+      <td>volleyball, sports, recreation, exercise,</td>
+      <td>Athletics</td>
+      <td>39.709339</td>
+      <td>-75.116371</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>115</td>
+      <td>Soccer Field</td>
+      <td>This field is used for the soccer team.</td>
+      <td>soccer, team, field, soccer field, sports,</td>
+      <td>Athletics</td>
+      <td>39.711628</td>
+      <td>-75.117752</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>116</td>
+      <td>Softball Field</td>
+      <td>The field used for softball games and practice.</td>
+      <td>None</td>
+      <td>Athletics</td>
+      <td>39.712139</td>
+      <td>-75.118629</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>117</td>
+      <td>Tennis Courts</td>
+      <td>Located next to the John Green Teamhouse, these outdoor tennis courts are open for use.</td>
+      <td>tennis, courts, tennis courts, team, sport, exercise,</td>
+      <td>Athletics</td>
+      <td>39.713367</td>
+      <td>-75.118202</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>118</td>
+      <td>Shuttle Stop Main Campus 1</td>
+      <td>This location off of Ellis Street is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.701782</td>
+      <td>-75.119019</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>119</td>
+      <td>Shuttle Stop Main Campus 2</td>
+      <td>This location off of Mick Drive by the art gallery is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.703972</td>
+      <td>-75.114891</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>120</td>
+      <td>Shuttle Stop Main Campus 3</td>
+      <td>This location off of Bulldog Way near both the Rowan Boulevard Garage and Rowan Boulevard Apartments is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.706219</td>
+      <td>-75.112740</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>121</td>
+      <td>Shuttle Stop Main Campus 4</td>
+      <td>This location off of 322 outside the Student Center is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.708321</td>
+      <td>-75.117851</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>122</td>
+      <td>Shuttle Stop Main Campus 5</td>
+      <td>This location between Bozorth and Hawthorn Halls is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.708282</td>
+      <td>-75.121246</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>123</td>
+      <td>Shuttle Stop Main Campus 6</td>
+      <td>This location in the new Business Hall parking lot is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.711060</td>
+      <td>-75.123581</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>124</td>
+      <td>Shuttle Stop Main Campus 7</td>
+      <td>This location in Robinson Circle is a stop for the both the internal and external Rowan shuttles to take students either to various on campus locations, or to the Camden Campus.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.711552</td>
+      <td>-75.120308</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>125</td>
+      <td>Shuttle Stop Main Campus 8</td>
+      <td>This location near the Edgewood Residence Hall is a stop for the internal Rowan shuttle to take students to various on campus locations.</td>
+      <td>None</td>
+      <td>Shuttle Stop Locations</td>
+      <td>39.710545</td>
+      <td>-75.114296</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>126</td>
+      <td>Department of Accounting and Finance</td>
+      <td>The Department of Accounting and Finance is located in Business Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710182</td>
+      <td>-75.122910</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>127</td>
+      <td>Department of Art</td>
+      <td>The Department of Art is located in Westby Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709869</td>
+      <td>-75.121689</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>128</td>
+      <td>Department of Biological Sciences</td>
+      <td>The Department of Biological Sciences is located in Science Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709862</td>
+      <td>-75.120918</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>129</td>
+      <td>Department of Biomedical Engineering</td>
+      <td>The Department of Biomedical Engineering is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.712154</td>
+      <td>-75.122314</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>130</td>
+      <td>Department of Chemical Engineering</td>
+      <td>The Department of Chemical Engineering is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.712090</td>
+      <td>-75.122299</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>131</td>
+      <td>Department of Chemistry and Biochemistry</td>
+      <td>The Department of Chemistry and Biochemistry is located in Science Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709778</td>
+      <td>-75.120789</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>132</td>
+      <td>Department of Civil and Environmental Engineering</td>
+      <td>The Department of Civil and Environmental Engineering is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.712055</td>
+      <td>-75.122223</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>133</td>
+      <td>Department of Communication Studies</td>
+      <td>The Department of Communication Studies is located in Hawthorn Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.708828</td>
+      <td>-75.121292</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>134</td>
+      <td>Department of Computer Science</td>
+      <td>The Department of Computer Science is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710621</td>
+      <td>-75.120338</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>135</td>
+      <td>Department of Educational Services and Leadership</td>
+      <td>The Department of Educational Services and Leadership is located in James Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711891</td>
+      <td>-75.119652</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>136</td>
+      <td>Department of Electrical and Computer Engineering</td>
+      <td>The Department of Electrical and Computer Engineering is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.712112</td>
+      <td>-75.122238</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>137</td>
+      <td>Department of English</td>
+      <td>The Department of English is located in Bunce Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.707153</td>
+      <td>-75.120689</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>138</td>
+      <td>Department of Experiential Engineering Education</td>
+      <td>The Department of Experiential Engineering Education is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711990</td>
+      <td>-75.122276</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>139</td>
+      <td>Department of Foreign Languages and Literatures</td>
+      <td>The Department of Foreign Languages and Literatures is located in Bunce Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.707169</td>
+      <td>-75.120689</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>140</td>
+      <td>Department of Geography, Planning, and Sustainability</td>
+      <td>The Department of Geography, Planning, and Sustainability is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710594</td>
+      <td>-75.120369</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>141</td>
+      <td>Department of Geology</td>
+      <td>The Department of Geology is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710606</td>
+      <td>-75.120308</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>142</td>
+      <td>Department of Global Learning and Partnerships</td>
+      <td>The Department of Global Learning and Partnerships is located in the Enterprise Center.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.705799</td>
+      <td>-75.113228</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>143</td>
+      <td>Department of Health and Exercise Science</td>
+      <td>The Department of Health and Exercise Science is located in James Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711758</td>
+      <td>-75.119408</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>144</td>
+      <td>Department of History</td>
+      <td>The Department of History is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710670</td>
+      <td>-75.120285</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>145</td>
+      <td>Department of Interdisciplinary and Inclusive Education</td>
+      <td>The Department of Interdisciplinary and Inclusive Education is located in James Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711693</td>
+      <td>-75.119446</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>146</td>
+      <td>Department of Journalism</td>
+      <td>The Department of Journalism is located at 6 High Street.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.702557</td>
+      <td>-75.111893</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>147</td>
+      <td>Department of Language, Literacy, and Sociocultural Education</td>
+      <td>The Department of Language, Literacy, and Sociocultural Education is located in James Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711666</td>
+      <td>-75.119415</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>Department of Law and Justice Studies</td>
+      <td>The Department of Law and Justice studies is located on floor 5 of the Campbell Library.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709202</td>
+      <td>-75.119125</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>Department of Management and Entrepreneurship</td>
+      <td>The Department of Management and Entrepreneurship is located in Business Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710110</td>
+      <td>-75.122795</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>Department of Marketing and Business Information Systems</td>
+      <td>The Department of Marketing and Business Information Systems is located in Business Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710026</td>
+      <td>-75.122406</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>151</td>
+      <td>Department of Mathematics</td>
+      <td>The Department of Mathematics is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710522</td>
+      <td>-75.120102</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>152</td>
+      <td>Department of Mechanical Engineering</td>
+      <td>The Department of Mechanical Engineering is located in Rowan Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.712173</td>
+      <td>-75.122368</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>153</td>
+      <td>Department of Molecular and Cellular Biosciences</td>
+      <td>The Department of Molecular and Cellular Biosciences is located in Science Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709835</td>
+      <td>-75.120842</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>154</td>
+      <td>Department of Music</td>
+      <td>The Department of Music is located in Wilson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710960</td>
+      <td>-75.121414</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>155</td>
+      <td>Department of Nursing</td>
+      <td>The Department of Nursing is located in Enterprise Center Office 341.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.705826</td>
+      <td>-75.113243</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>156</td>
+      <td>Department of Philosophy and Religion Studies</td>
+      <td>The Department of Philosophy and Religion Studies is located in Bunce Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.706997</td>
+      <td>-75.120628</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>157</td>
+      <td>Department of Physics &amp; Astronomy</td>
+      <td>The Department of Physics &amp; Astronomy is located in Science Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709827</td>
+      <td>-75.120819</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>158</td>
+      <td>Department of Political Science and Economics</td>
+      <td>The Department of Political Science and Economics is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710579</td>
+      <td>-75.120255</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>159</td>
+      <td>Department of Psychology</td>
+      <td>The Department of Psychology is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710705</td>
+      <td>-75.120285</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>160</td>
+      <td>Department of Public Relations and Adverising</td>
+      <td>The Department of Public Relations and Advertising is located at 301 West High Street.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.703812</td>
+      <td>-75.115128</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>161</td>
+      <td>Department of Radio, Television, and Film</td>
+      <td>The Department of Radio, Television, and Film is located in Bozorth Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.707996</td>
+      <td>-75.121635</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>162</td>
+      <td>Department of Science, Technology, Engineering, Arts, and Math Education</td>
+      <td>The Department of  Science, Technology, Engineering, Arts, and Math Education is located in James Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711666</td>
+      <td>-75.119606</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>163</td>
+      <td>Department of Sociology and Anthropology</td>
+      <td>The Department of Sociology and Anthropology is located on the 5th floor of the Campbell Library.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.709225</td>
+      <td>-75.118881</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>164</td>
+      <td>Department of Theatre and Dance</td>
+      <td>The Department of Theatre and Dance is located in Wilson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.711487</td>
+      <td>-75.121086</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>165</td>
+      <td>Department of Writing Arts</td>
+      <td>The Department of Writing Arts is located at 6 High Street.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.702431</td>
+      <td>-75.111832</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>166</td>
+      <td>School of Health Professions</td>
+      <td>The School of Health Professions is located in Robinson Hall.</td>
+      <td>None</td>
+      <td>Academic Departments</td>
+      <td>39.710678</td>
+      <td>-75.120522</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>167</td>
+      <td>Bunce Green</td>
+      <td>Located outside Bunce Hall, Bunce Green includes both the stairs to the oldest building on campus, as well as a grassy area in the front of the building. This building is where commencement ceremonies take place.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.706577</td>
+      <td>-75.121269</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>168</td>
+      <td>Engineering Hall Patio</td>
+      <td>Outside of Engineering Hall, there is a patio area with tables and chairs for outdoor seating.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.712563</td>
+      <td>-75.121902</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>169</td>
+      <td>Glassboro Town Square</td>
+      <td>This park located at the end of Rowan Boulevard on the corner of High and Main streets provides for students to walk through between campus and the shops and restaurants on High Street. The park features a veteran's memorial, a fire pit and lawn space with artificial hills.</td>
+      <td>park, town square, glassboro,</td>
+      <td>Outdoor Spaces</td>
+      <td>39.703266</td>
+      <td>-75.112320</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>170</td>
+      <td>Laurel, and Oak Hall Intersection</td>
+      <td>This intersection between Laurel and Oak halls has several benches available to sit on and enjoy the various trees and grassy areas.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.706970</td>
+      <td>-75.119041</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>171</td>
+      <td>Magnolia Hall Gazebo</td>
+      <td>This gazebo located outside Magnolia Hall is used frequently as a hang out for students. The gazebo is well lit at night.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.709274</td>
+      <td>-75.115181</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>172</td>
+      <td>Memorial Circle</td>
+      <td>Located between Hawthorn, Bunce, and Memorial Halls, this green space offers various benches and sidewalks for easy access to each building, as well as places for relaxation.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.708500</td>
+      <td>-75.120682</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>173</td>
+      <td>Robinson Green</td>
+      <td>A green space that incorporates sustainability and recycled materials, Robinson Green offers guests a beautifully landscaped area to peruse and enjoy.</td>
+      <td>green, green space, robinson green,</td>
+      <td>Outdoor Spaces</td>
+      <td>39.711128</td>
+      <td>-75.119804</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>174</td>
+      <td>Rowan Hall Lake</td>
+      <td>The lake behind Rowan Hall offers outdoor seating for people to enjoy, as well as a short walking or biking trail through the trees.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.711964</td>
+      <td>-75.122719</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>175</td>
+      <td>Student Center Patio</td>
+      <td>Located in the back of the Chamberlain Student Center, this patio offers outdoor seating and tables for eating.</td>
+      <td>None</td>
+      <td>Outdoor Spaces</td>
+      <td>39.709110</td>
+      <td>-75.118271</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>176</td>
+      <td>Bole Hall Restrooms</td>
+      <td>Rooms 103 (Wheelchair Accessible), 200A, and 200C.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.706261</td>
+      <td>-75.120712</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>177</td>
+      <td>Bozorth Hall Restrooms</td>
+      <td>Rooms 144, 155, and 156.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.707863</td>
+      <td>-75.121552</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>178</td>
+      <td>Bunce Hall Restrooms</td>
+      <td>Room 321B through classroom..</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.707005</td>
+      <td>-75.120781</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>179</td>
+      <td>Chamberlain Student Center Restrooms</td>
+      <td>Rooms 210 and 202 (Wheelchair Accessible).</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.708656</td>
+      <td>-75.118011</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>180</td>
+      <td>Esbjornson Gymnasium Restrooms</td>
+      <td>Rooms 101 and 102 (Wheelchair Accessible).</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.710606</td>
+      <td>-75.118912</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>181</td>
+      <td>Hawthorn Hall Restrooms</td>
+      <td>Rooms 106 and 108.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.708790</td>
+      <td>-75.121162</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>182</td>
+      <td>James Hall Restrooms</td>
+      <td>Rooms 1139, 1150 (in Reading Clinic), 3021, 3084 (Wheelchair Accessible).</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.711777</td>
+      <td>-75.119446</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>183</td>
+      <td>Memorial Hall Restrooms</td>
+      <td>Rooms 162, 184, 198, and 199 (Wheelchair Accessible).</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.707584</td>
+      <td>-75.119492</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>184</td>
+      <td>Robinson Hall Restrooms</td>
+      <td>Room 117Y.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.710670</td>
+      <td>-75.120201</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>185</td>
+      <td>Westby Hall Restrooms</td>
+      <td>Room 211.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.709862</td>
+      <td>-75.121635</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>186</td>
+      <td>Wilson Hall Restrooms</td>
+      <td>Rooms 114A, 114B, 214A, 215A.</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.711033</td>
+      <td>-75.121506</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>187</td>
+      <td>Winans Hall Restrooms</td>
+      <td>Rooms 171A and 171B through Counseling and Psychological Services (Wheelchair Accessible).</td>
+      <td>None</td>
+      <td>All Gender Restrooms</td>
+      <td>39.708324</td>
+      <td>-75.116982</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+    </body>
+    </html>
+    
