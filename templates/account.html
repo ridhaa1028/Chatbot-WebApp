@@ -34,6 +34,20 @@
             color: black;
         }
 
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f4f4f4; /* Set your desired background color */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #57150B; /* Set your desired thumb color */
+            border-radius: 14px;
+            border: 3px solid #f4f4f4; /* Set your desired border color */
+        }
+
         .user-info-box {
             padding: 20px;
             border-radius: 10px;
@@ -151,6 +165,7 @@
             <a href="http://localhost:5000/home" onclick="w3_close()"
                 class="w3-bar-item w3-button w3-hover-white">Home</a>
             <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+            <a href="http://localhost:5000/auth/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sign Out</a>
         </div>
     </nav>
 

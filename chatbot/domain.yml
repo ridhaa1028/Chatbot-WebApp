@@ -25,6 +25,14 @@ intents:
   - ask_specific_kind_of_event
   - ask_how_to_use_scheduler
   - ask_to_create_schedule
+  - just_description_class
+  - course_prerequisites
+  - what_about_events
+  - what_do
+  - how_course_information
+  - format_questions
+  - what_course_info
+  - what_about_event
 entities:
   - title
   - professor
@@ -53,6 +61,13 @@ actions:
   - action_ask_specific_kind_of_event
   - action_ask_how_to_use_scheduler
   - action_ask_to_create_schedule
+  - action_get_just_course_description
+  - action_get_course_prerequisites
+  - action_what_can_chatbot_do
+  - action_get_course_information
+  - action_answering_questions_correctly
+  - action_course_information_types
+  - action_inform_about_events
 responses:
   utter_greet:
     - text: Hi, Welcome to ProfBot, your personal Rowan University assistant! How can I help?

@@ -34,6 +34,21 @@
             color: black;
         }
 
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f4f4f4; /* Set your desired background color */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #57150B; /* Set your desired thumb color */
+            border-radius: 14px;
+            border: 3px solid #f4f4f4; /* Set your desired border color */
+        }
+
+
         .chat-container {
             background-color: #f4f4f4;
             border-radius: 10px;
@@ -46,7 +61,7 @@
         }
 
         .chat-box {
-            max-height: 80vh;
+            max-height: 76vh;
             /* Set max height to the viewport height */
             overflow-y: auto;
             border: 1px solid #ccc;
@@ -117,8 +132,10 @@
             <a href="http://localhost:5000/account" onclick="w3_close()"
                 class="w3-bar-item w3-button w3-hover-white">Your Account</a>
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+            <a href="http://localhost:5000/User_Guide" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+            <a href="http://localhost:5000/auth/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sign Out</a>
         </div>
+        
     </nav>
 
     <!-- Top menu on small screens -->

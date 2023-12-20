@@ -34,6 +34,20 @@
             color: black;
         }
 
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f4f4f4; /* Set your desired background color */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #57150B; /* Set your desired thumb color */
+            border-radius: 10px;
+            border: 3px solid #f4f4f4; /* Set your desired border color */
+        }
+
         .chat-container {
             background-color: #f4f4f4;
             border-radius: 10px;
@@ -46,7 +60,7 @@
         }
 
         .chat-box {
-            max-height: 80vh; /* Set max height to the viewport height */
+            max-height: 76vh; /* Set max height to the viewport height */
             overflow-y: auto;
             border: 1px solid #ccc;
             border-radius: 0px;
@@ -113,9 +127,9 @@
             <h3 class="w3-padding-64"><b>Prof Bot</b></h3>
         </div>
         <div class="w3-bar-block">
-            <a href="test.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
+            <a href="http://localhost:5000/login" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+            <a href="http://localhost:5000/User_Guide" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
         </div>
     </nav>
 

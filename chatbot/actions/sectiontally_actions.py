@@ -47,6 +47,19 @@ class GetCourseSectionsAction(Action):
         # Extract the course name from the slot or entity
         course_name = tracker.get_slot("title")
 
+        lowercase_course_name = course_name.lower()
+        if lowercase_course_name == "iot" or lowercase_course_name == "cloud computing":
+            course_name = "CLOUD COMPUT & INTERNET THINGS"
+        elif lowercase_course_name == "dsa":
+            course_name = "DATA STRUCT/ALGORITHM"
+        elif lowercase_course_name == "oopda" or lowercase_course_name == "data abstraction":
+            course_name = "OBJ-ORIENT PRGRM/DATA ABSTR"
+        elif lowercase_course_name == "lab techniques" or lowercase_course_name == "lab tech" or lowercase_course_name == "lcomputer lab techniques":
+            course_name = "COMPUTER LAB TECHNQ"
+        elif lowercase_course_name == "os":
+            course_name = "OPERATING SYSTEMS"
+
+
         if course_name:
             # Make a GET request to your API to filter by 'title'
             api_url = "http://localhost:5000/data_by_column"  # Update with your API URL

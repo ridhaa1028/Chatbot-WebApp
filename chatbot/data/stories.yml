@@ -26,3 +26,13 @@ stories:
   steps:
     - intent: description_class
     - action: action_get_course_description
+
+- story: Users asks for just class descirption
+  steps:
+    - intent: just_description_class
+    - action: action_get_just_course_description
+
+- story: Users asks for class prerequisites
+  steps:
+    - intent: prerequisite_class
+    - action: action_get_course_prerequisites

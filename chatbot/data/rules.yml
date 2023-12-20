@@ -22,10 +22,15 @@ rules:
     - intent: description_class
     - action: action_get_course_description
 
-- rule: User requests course description
+- rule: User requests just the course description
   steps:
-    - intent: description_class
-    - action: action_get_course_description
+    - intent: just_description_class
+    - action: action_get_just_course_description
+
+- rule: User requests course prerequisites
+  steps:
+    - intent: prerequisite_class
+    - action: action_get_course_prerequisites
 
 - rule: User tests events
   steps:
@@ -122,3 +127,27 @@ rules:
     - intent: ask_to_create_schedule
     - action: action_ask_to_create_schedule
 
+- rule: User asks what do
+  steps:
+    - intent: what_do
+    - action: action_what_can_chatbot_do
+
+- rule: User asks how to get course info
+  steps:
+    - intent: how_course_information
+    - action: action_get_course_information
+  
+- rule: User asks how to format
+  steps:
+    - intent: format_questions
+    - action: action_answering_questions_correctly
+
+- rule: User asks what sort of info about courses
+  steps:
+    - intent: what_course_info
+    - action: action_course_information_types
+
+- rule: User asks about how to ask events
+  steps:
+    - intent: what_about_event
+    - action: action_inform_about_events

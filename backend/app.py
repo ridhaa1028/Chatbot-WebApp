@@ -103,6 +103,17 @@ def home():
     else:
         return render_template('index.html', logged_in=False)
 
+@app.route('/login')
+def login():
+    return render_template('test.html', logged_in=True)
+
+@app.route('/User_Guide')
+def userGuide():
+    if current_user.is_authenticated:
+        return render_template('userGuide.html')
+    else:
+        return render_template('UserGuide2.html')
+
 @app.route('/account')
 def account():
     if current_user.is_authenticated:
