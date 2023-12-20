@@ -1,0 +1,772 @@
+MUS 04140:
+
+Variable credit is given to those students who participate.
+
+Wind Ensemble
+
+END
+
+MUS 04141:
+
+Variable credit is given to those students who participate.
+
+String Ensemble
+
+END
+
+MUS 04142:
+
+College Band
+
+Variable credit is given to those students who participate.
+
+END
+
+MUS 04143:
+
+Variable credit is given to those students who participate.
+
+Jazz Band
+
+END
+
+MUS 04144:
+
+Orchestra
+
+Variable credit is given to those students who participate.
+
+END
+
+MUS 04145:
+
+Variable credit is given to those students who participate.
+
+Lab Band
+
+END
+
+MUS 04146:
+
+Concert Choir
+
+Variable credit is given to those students who participate.
+
+END
+
+MUS 04147:
+
+Variable credit is given to those students who participate.
+
+Contemp Music Ensemble
+
+END
+
+MUS 04148:
+
+Variable credit is given to those students who participate.
+
+Percussion Ensemble
+
+END
+
+MUS 04149:
+
+Variable credit is given to those students who participate.
+
+Guitar Ensemble
+
+END
+
+MUS 04150:
+
+Variable credit is given to those students who participate.
+
+Flute Ensemble
+
+END
+
+MUS 04151:
+
+Variable credit is given to those students who participate.
+
+Opera Company
+
+END
+
+MUS 04152:
+
+Variable credit is given to those students who participate.
+
+Saxophone Ensemble
+
+END
+
+MUS 04153:
+
+Variable credit is given to those students who participate.
+
+Clarinet Ensemble
+
+END
+
+MUS 04154:
+
+Variable credit is given to those students who participate.
+
+Women's Chorus
+
+END
+
+MUS 04155:
+
+Men's Chorus
+
+Variable credit is given to those students who participate.
+
+END
+
+MUS 08108:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08109:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08110:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08111:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08112:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08113:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08114:
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+String Ensemble
+
+END
+
+MUS 08115:
+
+String Ensemble
+
+The String Ensemble performs a variety of chamber music repertoire.
+
+END
+
+MUS 08116:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08117:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08118:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08119:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08120:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08121:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08122:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08123:
+
+The College Band is open to all Rowan students and performs a wide variety of wind band repertoire.
+
+College Band
+
+END
+
+MUS 08132:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08133:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08134:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08135:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08136:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08137:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08138:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08139:
+
+The Orchestra performs a wide range of symphonic orchestral repertoire and is open by audition only.
+
+Orchestra
+
+END
+
+MUS 08164:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08165:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08166:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08167:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08168:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08169:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08170:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08171:
+
+The Percussion Ensemble performs challenging repertoire for many configurations of percussion instruments.
+
+Percussion Ensemble
+
+END
+
+MUS 08172:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08173:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08174:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08175:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08176:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08177:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08178:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08179:
+
+The Guitar Ensemble performs a range of repertoire for classical guitar.
+
+Guitar Ensemble
+
+END
+
+MUS 08180:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08181:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08182:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08183:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08184:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08185:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08186:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08187:
+
+The Flute Ensemble explores repertoire composed for flute choir.
+
+Flute Ensemble
+
+END
+
+MUS 08196:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08197:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08198:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08199:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08200:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08201:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08202:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08203:
+
+The Saxophone Ensemble performs classical and jazz repertoire written for saxophone quartet, quintet and choir.
+
+Saxophone Ensemble
+
+END
+
+MUS 08219:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08220:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08221:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08222:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08223:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08224:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08225:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08226:
+
+The Men's Choir is open to all who wish to participate and performs high quality music written for men's voices.
+
+Tenor-Bass Chorus
+
+END
+
+MUS 08243:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08244:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08245:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08246:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08248:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08249:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 08250:
+
+The Clarinet Choir explores and performs clarinet choir repertoire.
+
+Clarinet Ensemble
+
+END
+
+MUS 97102:
+
+Piano I For Non-Music Majors
+
+Beginning piano taught in a class. No previous experience in music is necessary. For Non-Music Majors.
+
+END
+
+MUS 97103:
+
+Piano II For Non-Music Majors
+
+A continuation of Piano I for Non-Music Majors. Not for music majors.
+
+
+END
+
+MUS 97111:
+
+The fundamentals of cello and bass are studied.
+
+String Class-Low
+
+END
+
+MUS 97112:
+
+Fingering and bowing patterns, tone production, tuning, methods and materials are studied for the violin and viola.
+
+String Class-High
+
+END
+
+MUS 97114:
+
+Secondary Applied Instrument 1
+
+END
+
+MUS 97115:
+
+Secondary Applied Instrument 2
+
+END
+
+MUS 97229:
+
+A study of the guitar performance and a study of the materials available.
+
+Guitar Class I
+
+END
+
+MUS 97230:
+
+A continuation of the study of the guitar through performance and a study of the materials available.
+
+Guitar Class II
+
+END
+
+MUS 97300:
+
+Designed for Music Education majors, this course addresses horn pedagogy and basic horn performance.
+
+French Horn Class
+
+END
+
+MUS 97301:
+
+Designed for Music Education majors, this course addresses trombone pedagogy and basic trombone performance.
+
+Trombone Class
+
+END
