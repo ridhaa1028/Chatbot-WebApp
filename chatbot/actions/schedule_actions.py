@@ -73,6 +73,11 @@ class CreateScheduleAction(Action):
         # Is a list of subj + # tuples: eg [('ACC', '03211'), ('ACC', '03320'), ('ENGL', '02116'), ('ENGR', '01391'), ('XYZ', '22223')]
         course_list = extract_from_user(course_string)
 
+         # try to ensure bad string doesn't break bot
+        if not course_list:
+            dispatcher.utter_message("Please refer to the user guide or ask the bot on how to correctly format message for scheduler")
+            return
+
         # Will send course_list, user_limit and flag as parameters to flask endpoint
         api_url = "http://localhost:5000/create_schedule"
         payload = {
