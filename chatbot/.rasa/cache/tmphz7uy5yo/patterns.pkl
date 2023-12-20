@@ -1,6 +1,0 @@
-[
-  {
-    "name": "course_name",
-    "pattern": "[A-Z][A-Z0-9\\s]*"
-  }
-]
